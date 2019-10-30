@@ -1,0 +1,17 @@
+---
+deployment:
+  tasks:
+    - git pull
+    - export DEPLOYPATH=/home/thecoefs/public_html/
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R scss $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp 404.html $DEPLOYPATH
+    - /bin/cp blog-archive.html $DEPLOYPATH
+    - /bin/cp blog-single.html $DEPLOYPATH
+    - /bin/cp contact.html $DEPLOYPATH
+    - /bin/cp course.html $DEPLOYPATH
+    - /bin/cp course-detail.html $DEPLOYPATH
+    - /bin/cp gallery.html $DEPLOYPATH
+    - /bin/cp start.js $DEPLOYPATH
+    
