@@ -8,6 +8,9 @@ deployment:
     - /bin/cp -R admin $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp 404.html $DEPLOYPATH
+    - /bin/cp login.html $DEPLOYPATH
+    - /bin/cp login2.html $DEPLOYPATH
+    - /bin/cp login3.html $DEPLOYPATH
     - /bin/cp blog-archive.html $DEPLOYPATH
     - /bin/cp blog-single.html $DEPLOYPATH
     - /bin/cp contact.html $DEPLOYPATH
