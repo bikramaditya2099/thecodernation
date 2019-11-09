@@ -243,7 +243,19 @@ jQuery(function($){
       jQuery('html, body').animate({scrollTop : 0},800);
       return false;
     });  
-  
+    $(document).ready(function() {
+      var today = new Date().toDateString();
+    $('.today').html(today);
+  });
 
+});
+
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope,$http) {
+  $http.get("/assets/json/homepage.json")
+  .then(function(response) {
+   console.log(JSON.stringify(response));
+   $scope.pageHeader=response.data;
+  });
 });
 

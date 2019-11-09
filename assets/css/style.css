@@ -2499,3 +2499,35 @@ img {
     font-size: 100px;
   }
 }
+.reg-col{
+  background: #337ab7db;
+  color: #fff;
+}
+.shadow-lg{
+  box-shadow:0px 8px 6px #888888;
+  width: 23%;
+  height: 555px;
+  padding: 61px;
+}
+.demo{
+  background-color: rgba(0, 0, 0, .075);
+}
+.bodylogin {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
+}
+
+.box-shadow {
+-webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+-moz-box-shadow:    0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.52)
+}
+.fa-times{
+  width: 53px;
+  padding: 5px 19px 26px 19px;
+  background: antiquewhite;
+  height: 1px;
+  border-radius: 23px;
+}
+
+
+
