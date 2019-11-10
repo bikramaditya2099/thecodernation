@@ -5,6 +5,7 @@ deployment:
     - export DEPLOYPATH=/home/thecoefs/public_html/pie/
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R scss $DEPLOYPATH
+    - /bin/cp -R corner $DEPLOYPATH
     - /bin/cp -R admin $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp 404.html $DEPLOYPATH
