@@ -3510,7 +3510,7 @@ input[type="button"].btn-block {
 }
 
 .fade:not(.show) {
-  opacity: 0;
+  opacity: 1;
 }
 
 .collapse:not(.show) {
@@ -6214,7 +6214,7 @@ button.close {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto;
+    margin: 5.75rem auto;
   }
 
   .modal-dialog-centered {
@@ -15859,7 +15859,7 @@ a.btn-icon-only {
 }
 
 .footer {
-  background: #f7fafc;
+ /* background: #f7fafc;*/
   padding: 2.5rem 0;
   position: fixed;
     /* left: 0; */
