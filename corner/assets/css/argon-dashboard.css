@@ -1316,8 +1316,8 @@ pre code {
   }
 
   .col-lg-7 {
-    flex: 0 0 58.333333%;
-    max-width: 58.333333%;
+    flex: 1 0 58.333333%;
+    max-width:100%;
   }
 
   .col-lg-8 {
@@ -14019,7 +14019,7 @@ button.section-darker:focus {
 }
 
 .opacity-8 {
-  opacity: .9 !important;
+  opacity: .7 !important;
 }
 
 .opacity-10 {

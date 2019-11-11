@@ -8,6 +8,9 @@ app.config(function($routeProvider) {
     .when("/dashboard", {
       templateUrl : "/corner/index.html"
     })
+    .when("/profile", {
+        templateUrl : "/corner/pages/profile.html"
+      })
    
   });
 app.service('urlService', function() {
@@ -46,12 +49,13 @@ app.factory('userService',['$rootScope',function($rootScope){
 
   app.controller('userController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window) {
 
-   if(userService.getToken()==undefined){
+    console.log(sessionStorage.token);
+   if(sessionStorage.token==undefined || sessionStorage.token=="undefined"){
     $window.location.href ="/corner/pages/login";
    }
    else{
     var requrl=urlService.host()+urlService.userDetails();
-    var token=userService.getToken();
+    var token=JSON.parse(sessionStorage.token);
     $http({
         url: requrl,
         method: "GET",
@@ -70,6 +74,12 @@ app.factory('userService',['$rootScope',function($rootScope){
     function(response) { // optional
            console.log(response);
     });
+   }
+
+  
+   $scope.logout=function(){
+    sessionStorage.token=undefined;
+    $window.location.href="/";
    }
 
 });  
@@ -92,6 +102,7 @@ $scope.signIn=function(){
         if(response.data.status!="FAIL"){
             $scope.validuser=true;
         userService.setToken(response.data);
+        sessionStorage.token=JSON.stringify(response.data);
            console.log(response);
            $window.location.href = "#!dashboard";
         }
