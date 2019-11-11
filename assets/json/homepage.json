@@ -27,81 +27,33 @@
      { 
         "name": "Our Differentiators",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      },
      { 
         "name": "Clients",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      },
      { 
         "name": "News & Events",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      },
      
      { 
         "name": "Careers with TCN",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      },
      { 
         "name": "Webinars & Resources",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      },
      { 
         "name": "Contact us",
         "url":"#",
-        "subMenu":[{
-                "name": "Course Archive",
-                "url":"#"
-             },
-             {
-                "name": "Course Detail",
-                "url":"#"
-             }
-        ]
+        "subMenu":[]
      }],
     "slider":[
         {
