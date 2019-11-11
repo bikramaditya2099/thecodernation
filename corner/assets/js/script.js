@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
   });
 app.service('urlService', function() {
     this.host = function () {
-      return "http://ec2-54-214-109-157.us-west-2.compute.amazonaws.com:8081/";
+      return "https://thecodersnation-1035162200.us-west-2.elb.amazonaws.com/";
     }
     this.registerUrl=function(){
         return "register";
