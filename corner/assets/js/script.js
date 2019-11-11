@@ -76,7 +76,9 @@ app.factory('userService',['$rootScope',function($rootScope){
 
 app.controller('loginController', function($scope,$http,urlService,$uibModal,userService,$window) {
     $scope.formmodel={};
+    $scope.validuser=true;
 $scope.signIn=function(){
+    $scope.validuser=true;
     var json={};
     json.username=$scope.formmodel.username;
     json.password=$scope.formmodel.password;
@@ -88,9 +90,13 @@ $scope.signIn=function(){
     })
     .then(function(response) {
         if(response.data.status!="FAIL"){
+            $scope.validuser=true;
         userService.setToken(response.data);
            console.log(response);
            $window.location.href = "#!dashboard";
+        }
+        else{
+            $scope.validuser=false;
         }
     }, 
     function(response) { // optional
