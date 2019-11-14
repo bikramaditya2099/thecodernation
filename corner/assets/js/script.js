@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
   });
 app.service('urlService', function() {
     this.host = function () {
-      return "https://thecodersnation-837252198.us-west-2.elb.amazonaws.com/";
+      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
     }
     this.registerUrl=function(){
         return "register";
