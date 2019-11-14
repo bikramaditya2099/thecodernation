@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
   });
 app.service('urlService', function() {
     this.host = function () {
-      return "https://thecodersnation-1035162200.us-west-2.elb.amazonaws.com/";
+      return "https://thecodersnation-837252198.us-west-2.elb.amazonaws.com/";
     }
     this.registerUrl=function(){
         return "register";
@@ -66,7 +66,7 @@ app.factory('userService',['$rootScope',function($rootScope){
         }
     })
     .then(function(response) {
-        if(response.data.status!="FAIL"){
+       if(response.data.status!="FAIL"){
        $scope.userDetails=response.data;
        console.log($scope.userDetails);
         }
@@ -77,7 +77,7 @@ app.factory('userService',['$rootScope',function($rootScope){
    }
 
   
-   $scope.logout=function(){
+    $scope.logout=function(){
     sessionStorage.token=undefined;
     $window.location.href="/";
    }
@@ -87,7 +87,7 @@ app.factory('userService',['$rootScope',function($rootScope){
 app.controller('loginController', function($scope,$http,urlService,$uibModal,userService,$window) {
     $scope.formmodel={};
     $scope.validuser=true;
-$scope.signIn=function(){
+    $scope.signIn=function(){
     $scope.validuser=true;
     var json={};
     json.username=$scope.formmodel.username;
