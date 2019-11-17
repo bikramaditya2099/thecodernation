@@ -4,19 +4,11 @@ deployment:
     - git pull
     - export DEPLOYPATH=/home/thecoefs/public_html/pie/
     - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R scss $DEPLOYPATH
     - /bin/cp -R corner $DEPLOYPATH
     - /bin/cp -R admin $DEPLOYPATH
+    - /bin/cp -R demo $DEPLOYPATH
+    - /bin/cp -R docs $DEPLOYPATH
+    - /bin/cp -R user $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp 404.html $DEPLOYPATH
-    - /bin/cp login.html $DEPLOYPATH
-    - /bin/cp login2.html $DEPLOYPATH
-    - /bin/cp login3.html $DEPLOYPATH
-    - /bin/cp blog-archive.html $DEPLOYPATH
-    - /bin/cp blog-single.html $DEPLOYPATH
-    - /bin/cp contact.html $DEPLOYPATH
-    - /bin/cp course.html $DEPLOYPATH
-    - /bin/cp course-detail.html $DEPLOYPATH
-    - /bin/cp gallery.html $DEPLOYPATH
-    - /bin/cp start.js $DEPLOYPATH
+   
     
