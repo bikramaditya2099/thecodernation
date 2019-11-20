@@ -222,7 +222,8 @@ app.controller('otpValidationController', function($scope,$http,urlService,$uibM
       method: "GET",
       headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':'*'
       }
   })
   .then(function(response) {
