@@ -17,6 +17,9 @@ app.config(function($routeProvider) {
       .when("/login", {
         templateUrl : "/user/login.html"
       })
+      .when("/emailValidate", {
+        templateUrl : "/user/otp_validation.html"
+      })
    
   });
 app.service('urlService', function() {
@@ -210,7 +213,7 @@ app.controller('registrationController', function($scope,$http,urlService,$uibMo
   
    
   $scope.createAccount=function(){
-    
+    $("#spinner").show();
     $scope.json={};
     $scope.json.fname=$scope.fname;
     $scope.json.mname=$scope.mname;
@@ -226,7 +229,7 @@ app.controller('registrationController', function($scope,$http,urlService,$uibMo
         data: $scope.json
     })
     .then(function(response) {
-        $scope.showModal();
+      $("#spinner").hide();
         
            console.log(response);
     }, 
