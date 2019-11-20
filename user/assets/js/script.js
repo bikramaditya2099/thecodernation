@@ -35,7 +35,7 @@ app.service('urlService', function() {
         return "authenticate";
     }
     this.userDetails=function(){
-        return "getUserDetails";
+        return "getuserdetails";
     }
     this.otpValidate=function(){
       return "validateOTP/";
