@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
         templateUrl : "/user/register.html"
       })
       .when("/error", {
-        templateUrl : "/500.html"
+        templateUrl : "/user/500.html"
       })
       .when("/login", {
         templateUrl : "/user/login.html"
@@ -20,11 +20,37 @@ app.config(function($routeProvider) {
       .when("/emailValidate", {
         templateUrl : "/user/otp_validation.html"
       })
+      .when("/emailValidateURL/:otp", {
+        templateUrl : "/user/otp_validation.html",
+        controller: 'validateController'
+      })
+
+      .when("/redirectSuccessEmail", {
+        templateUrl : "/user/emailValidated.html",
+        controller: 'validateController'
+      })
    
   });
+
+  app.controller('validateController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window,$routeParams) {
+
+    alert($routeParams.otp);
+    $window.location.href="#!redirectSuccessEmail";
+
+  });  
+
+  app.controller('emailValidatedController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window,$routeParams) {
+
+    alert("redirecting");
+
+  });  
+
+  
+
 app.service('urlService', function() {
     this.host = function () {
       return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+     //return "http://localhost:8081/";
     }
     this.registerUrl=function(){
         return "register";
@@ -36,6 +62,12 @@ app.service('urlService', function() {
     this.userDetails=function(){
         return "getuserdetails";
     }
+    this.otpValidate=function(){
+      return "validateOTP/";
+  }
+  this.resendOTP=function(){
+    return "resendOtp/";
+}
 
   });
   app.controller('Nav', function($scope) {
@@ -134,7 +166,7 @@ app.factory('userService',['$rootScope',function($rootScope){
 
     console.log(sessionStorage.token);
    if(sessionStorage.token==undefined || sessionStorage.token=="undefined"){
-    $window.location.href ="/user/";
+    $window.location.href ="/";
    }
    else{
     var requrl=urlService.host()+urlService.userDetails();
@@ -167,7 +199,77 @@ app.factory('userService',['$rootScope',function($rootScope){
    }
 
 });  
+app.controller('otpValidationController', function($scope,$http,urlService,$uibModal,userService,$window) {
+  $scope.otpValidated=false;
+  $scope.otpError=false;
+  $scope.resendSuccess=false;
+  $scope.resendError=false;
+  $scope.val={};
 
+  var userData={};
+  if(sessionStorage.userData==undefined || sessionStorage.userData=="undefined"){
+    $window.location.href="#!register";
+  }
+  else{
+   userData=JSON.parse( sessionStorage.userData);
+  }
+  $scope.resendOTP=function(){
+    $("#spinner").show();
+    var requrl=urlService.host()+urlService.resendOTP()+userData.email;
+    $http({
+      url: requrl,
+      method: "GET",
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      }
+  })
+  .then(function(response) {
+    $("#spinner").hide();
+     if(response.data.status!="FAIL"){
+     $scope.resendSuccess=true;
+      }
+      else{
+        $scope.resendError=true;
+      }
+  }, 
+  function(response) { // optional
+    $("#spinner").hide();
+         console.log(response);
+         $window.location.href="#!error";
+  });
+  }
+  $scope.validateOTP=function(){
+    $("#spinner").show();
+    var otp=$scope.val.otp;
+    var requrl=urlService.host()+urlService.otpValidate()+userData.email+"/"+otp;
+    $http({
+      url: requrl,
+      method: "GET",
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      }
+  })
+  .then(function(response) {
+    $("#spinner").hide();
+     if(response.data.status!="FAIL"){
+     $scope.otpValidated=true;
+      }
+      else{
+        $scope.otpError=true;
+      }
+  }, 
+  function(response) { // optional
+    $("#spinner").hide();
+         console.log(response);
+         $window.location.href="#!error";
+  });
+
+  }
+
+
+});   
 app.controller('loginController', function($scope,$http,urlService,$uibModal,userService,$window) {
     $("#spinner").hide();
     $scope.formmodel={};
@@ -207,12 +309,13 @@ app.controller('loginController', function($scope,$http,urlService,$uibModal,use
 }
 
 });   
-app.controller('registrationController', function($scope,$http,urlService,$uibModal) {
+app.controller('registrationController', function($scope,$http,urlService,$uibModal,$window) {
   
         $("#spinner").hide();
   
-   
+ 
   $scope.createAccount=function(){
+    $scope.reg_error=false;
     $("#spinner").show();
     $scope.json={};
     $scope.json.fname=$scope.fname;
@@ -230,7 +333,13 @@ app.controller('registrationController', function($scope,$http,urlService,$uibMo
     })
     .then(function(response) {
       $("#spinner").hide();
-        
+      if(response.data.code==2000){
+      sessionStorage.userData=JSON.stringify($scope.json);
+      $window.location.href="#!emailValidate";
+     
+    }
+        else
+        $scope.reg_error=true;
            console.log(response);
     }, 
     function(response) { // optional

@@ -20,8 +20,33 @@ app.config(function($routeProvider) {
       .when("/emailValidate", {
         templateUrl : "/user/otp_validation.html"
       })
+      .when("/emailValidateURL/:otp", {
+        templateUrl : "/user/otp_validation.html",
+        controller: 'validateController'
+      })
+
+      .when("/redirectSuccessEmail", {
+        templateUrl : "/user/emailValidated.html",
+        controller: 'validateController'
+      })
    
   });
+
+  app.controller('validateController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window,$routeParams) {
+
+    alert($routeParams.otp);
+    $window.location.href="#!redirectSuccessEmail";
+
+  });  
+
+  app.controller('emailValidatedController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window,$routeParams) {
+
+    alert("redirecting");
+
+  });  
+
+  
+
 app.service('urlService', function() {
     this.host = function () {
       return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
@@ -72,8 +97,8 @@ app.factory('userService',['$rootScope',function($rootScope){
             data: {
               columns: [
                   // each columns data
-                ['data1', 80],
-                ['data2', 20]
+                ['data1', 1],
+                ['data2', 0]
               ],
               type: 'donut', // default type of chart
               colors: {
@@ -139,6 +164,51 @@ app.factory('userService',['$rootScope',function($rootScope){
         });
       });
 
+      require(['c3', 'jquery'], function(c3, $) {
+        $(document).ready(function(){
+          var chart = c3.generate({
+            bindto: '#chart-bar-stacked', // id of chart wrapper
+            data: {
+              columns: [
+                  // each columns data
+                ['data1', 11, 8, 15, 18, 19, 17],
+                ['data2', 0, 0, 0, 0, 0, 0]
+              ],
+              type: 'bar', // default type of chart
+              groups: [
+                [ 'data1', 'data2']
+              ],
+              colors: {
+                'data1': tabler.colors["blue"],
+                'data2': tabler.colors["pink"]
+              },
+              names: {
+                  // name of each serie
+                'data1': 'target',
+                'data2': 'completed'
+              }
+            },
+            axis: {
+              x: {
+                type: 'category',
+                // name of each category
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+              },
+            },
+            bar: {
+              width: 16
+            },
+            legend: {
+                      show: false, //hide legend
+            },
+            padding: {
+              bottom: 0,
+              top: 0
+            },
+          });
+        });
+      });
+
     console.log(sessionStorage.token);
    if(sessionStorage.token==undefined || sessionStorage.token=="undefined"){
     $window.location.href ="/";
@@ -179,6 +249,7 @@ app.controller('otpValidationController', function($scope,$http,urlService,$uibM
   $scope.otpError=false;
   $scope.resendSuccess=false;
   $scope.resendError=false;
+  $scope.val={};
 
   var userData={};
   if(sessionStorage.userData==undefined || sessionStorage.userData=="undefined"){
@@ -215,7 +286,7 @@ app.controller('otpValidationController', function($scope,$http,urlService,$uibM
   }
   $scope.validateOTP=function(){
     $("#spinner").show();
-    var otp=$scope.otp;
+    var otp=$scope.val.otp;
     var requrl=urlService.host()+urlService.otpValidate()+userData.email+"/"+otp;
     $http({
       url: requrl,

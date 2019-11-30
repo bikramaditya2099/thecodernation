@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - git pull
-    - export DEPLOYPATH=/home/thecoefs/public_html/pie/
+    - export DEPLOYPATH=/home/thecoefs/public_html/
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R corner $DEPLOYPATH
     - /bin/cp -R admin $DEPLOYPATH
