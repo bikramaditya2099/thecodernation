@@ -10,5 +10,7 @@ deployment:
     - /bin/cp -R docs $DEPLOYPATH
     - /bin/cp -R user $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp tcndatascience.html $DEPLOYPATH
+    - /bin/cp tcnfullstack.html $DEPLOYPATH
    
     
