@@ -2,15 +2,11 @@
 deployment:
   tasks:
     - git pull
-    - export DEPLOYPATH=/home/thecoefs/public_html/
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R corner $DEPLOYPATH
-    - /bin/cp -R admin $DEPLOYPATH
-    - /bin/cp -R demo $DEPLOYPATH
-    - /bin/cp -R docs $DEPLOYPATH
-    - /bin/cp -R user $DEPLOYPATH
+    - export DEPLOYPATH=/home/thecoefs/pie/
+    - /bin/cp -R banners $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R futura $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp tcndatascience.html $DEPLOYPATH
-    - /bin/cp tcnfullstack.html $DEPLOYPATH
-   
+    - /bin/cp logo.png $DEPLOYPATH   
     

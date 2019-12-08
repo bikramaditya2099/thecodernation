@@ -1,0 +1,80 @@
+.active{
+  color: #18cbf4 !important;
+}
+.text_first{
+    text-align:center;
+   
+}
+.text_first1{
+    text-align:center;
+    color: #1e74bd;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.color_text{
+    color:blue;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  /* .nav_menu{
+    padding: 1px 0px 0px 225px;
+    
+  } */
+  .btn_login{
+    color: #000;
+  }
+  .btn_login:hover{
+      color:#ff0000ba;
+  }
+  .navbar-brand{
+    color:#ff0000ba;
+  }
+  
+  .nav-item{
+    padding-left: 230px;
+  }
+  .dark-grey-text{
+      color:#000;
+  }
+  body {
+    font-family: 'Cabin !important';
+    }
+ .nav-home{
+    color: #007bff;
+ }
+
+ .footer-copyright{
+     background: #000;
+     color:#fff;
+ }
+ .img-slider-text{
+   position: absolute;
+   top:180px;
+   left:20%;
+ }
+ .text-blue{
+   color:#18cbf4;
+ }
+ 
