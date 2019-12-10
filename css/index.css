@@ -58,9 +58,7 @@
   .dark-grey-text{
       color:#000;
   }
-  body {
-    font-family: 'Cabin !important';
-    }
+
  .nav-home{
     color: #007bff;
  }
@@ -71,10 +69,59 @@
  }
  .img-slider-text{
    position: absolute;
-   top:180px;
+   top:15%;
    left:20%;
  }
  .text-blue{
    color:#18cbf4;
  }
+ .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  left: inherit;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 350px;
+}
  
+
+.btn-danger {
+  color: #fff;
+  background-color: #EF447C;
+  border-color: #EF447C;
+}
+
+.btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(.disabled):active, .show>.btn-danger.dropdown-toggle {
+  color: #fff;
+  background-color: #EF447C;
+  border-color: #EF447C;
+}
+
+.soc-media p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  float: left;
+  padding: 13px;
+  font-size: 27px;
+}
+ul li a{
+  font-weight:bold;
+}

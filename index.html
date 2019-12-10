@@ -4,7 +4,7 @@
   <title>Home Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/index.css">
+  
   <!-- <script src="js/"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
@@ -12,6 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
        <div class="container">
@@ -35,7 +36,7 @@
                                 </div>
                               </div>
                               <a class="nav-link btn_login" href="#">Log In</a>
-                    <button class="btn btn-outline-danger my-2 my-sm-0 " type="submit">Sign Up Free</button>
+                    <button class="btn btn-danger my-2 my-sm-0 " type="submit">Sign Up Free</button>
                   </form>
                 </div>
               </nav>
@@ -56,26 +57,24 @@
         <li class="nav-home">
           <a class="nav-link active" href="#">Home</a>
         </li>
-        <li class="nav-item">
-                <a class="nav-link" href="#">Our Differentiators</a>
-         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Our Differentiators</a>
+            <a class="dropdown-item" href="#">Our Pedagogy</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
          <li class="nav-item">
                 <a class="nav-link" href="#">Clients</a>
          </li>
          <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
          </li>
-        <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Our Differentiators
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li> -->
+       
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Clients
@@ -166,15 +165,16 @@
           Skill Change But Capabilities Endure !
       </p>
       <p class="text_first">
-        The Coders Nation(TCN) is a community of IT Enthusiasts. Technical Leaders, <br>Students and Human Resources Leaders coming together. It's a convergence to help improve <br>the overall Talwnt pipeline to suit jobs of 21st Century. we are commited to impart those skills, <br>which not only help you get a job now but also help you succees throughout your career!
+        The Coders Nation(TCN) is a community of IT Enthusiasts. Technical Leaders, <br>Students and Human Resources Leaders coming together. It's a convergence to help improve <br>the overall Talent pipeline to suit jobs of 21st Century. we are committed to impart those skills, <br>which not only help you get a job now but also help you success throughout your career!
       </p>
       <p class="color_text">
-          <h3 class="text_first1">Welcome To The Nations Of Coder;</h3>
-          <h2 class="text_first1">"The Coders  Nations"</h2>
+          <h3 class="text_first1">Welcome To The Nation Of Coders;</h3>
+          <h2 class="text_first1">"The Coders  Nation"</h2>
       </p>
   </div>
   <hr>
  <!-- Footer -->
+ <img class="navbar-brand " src="logo.png"  style="height: 122px;width: 113px;margin-left: 192px;">
 <footer class="page-footer font-small blue-grey lighten-5">
         <!-- Footer Links -->
         <div class="container text-center text-md-left mt-5">
@@ -188,8 +188,8 @@
               <!-- Content -->
               <h6 class="text-uppercase font-weight-bold">Office Address</h6>
               <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #007bff;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8202668312833!2d85.80554741475125!3d20.349042386370435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1908e025984c55%3A0xee1fcd1f11e55141!2sDLF%20CYBER%20CITY!5e0!3m2!1sen!2sin!4v1575832075865!5m2!1sen!2sin" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      
+              <p>121 E 2/7 11th Floor <br> DLF Cyber City <br> Bhubaneswar, Odisha <br> India 
+                <br> <br>  Phone : +91-9845040735 <br> Fax : 001-081-897654 <br> Email : info@thecodersnation.com
             </div>
             <!-- Grid column -->
       
@@ -216,11 +216,12 @@
             <!-- Grid column -->
       
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
       
               <!-- Links -->
               <h6 class="text-uppercase font-weight-bold">Follow Us On Social Media</h6>
               <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #007bff;">
+              <div class="soc-media">
               <p>
                 <i class="fa fa-facebook-square" aria-hidden="true"></i>
               </p>
@@ -233,7 +234,7 @@
               <p>
                 <i class="fa fa-google-plus-square" aria-hide="true"></i>
               </p>
-      
+              </div>
             </div>
             <!-- Grid column -->
       
@@ -253,7 +254,7 @@
                     Email:<br>
                     <input type="email" value=""></p>
               <p>
-                <button class="btn btn-danger">Lets Talk</button></p>
+                <button class="btn btn-danger">Let's Talk</button></p>
       
             </div>
             <!-- Grid column -->
@@ -265,8 +266,8 @@
         <!-- Footer Links -->
       
         <!-- Copyright -->
-        <div class="footer-copyright text-center text-white-50 py-3">© 2019 Copyright
-          <a class="dark-blue-text" href="#"> THECODERSNATION</a>
+        <div class="footer-copyright text-center text-white-50 py-3">Copyright © 2019 
+          <a class="dark-blue-text" href="#"> THE CODERS NATION</a>
         </div>
         <!-- Copyright -->
       
