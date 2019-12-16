@@ -11,5 +11,6 @@ deployment:
     - /bin/cp aboutus.html $DEPLOYPATH
     - /bin/cp courses.html $DEPLOYPATH
     - /bin/cp Signup.html $DEPLOYPATH
+\   - /bin/cp clients.html $DEPLOYPATH
     - /bin/cp logo.png $DEPLOYPATH   
     

@@ -70,7 +70,7 @@
  .img-slider-text{
    position: absolute;
    top:15%;
-   left:20%;
+   left:15%;
  }
  .text-blue{
    color:#18cbf4;
@@ -127,7 +127,7 @@ ul li a{
 }
 
 table, th, td {
-  border: 0px solid black;
+  border: 1px solid #e6e1e1;
 }
 
 th, td { padding: 5px; }
@@ -137,10 +137,12 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
    /* cellspacing="0" */
 
 /* valign */
-th, td { vertical-align: top; }
+th, td {     vertical-align: top;
+  background: white;}
 
 /* align (center) */
-table { margin: 0 auto; }
+table { margin: 0 auto; box-shadow: 0px 16px 24px -7px grey;
+  background: #e6e1e1;}
 
 /********************************************************************CSS for floating icon*******************************************************/
 .gfq-wrap {
@@ -150,9 +152,9 @@ table { margin: 0 auto; }
 	right: 40px;
 }
 .gfq-badge {
-	background:#7bb1f4; /*Change this colour to change the circle*/
-	width: 60px;
-	height: 60px;
+	 /*Change this colour to change the circle*/
+	width: 70px;
+	height: 70px;
 	border-radius: 100%;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
 	transition: all 0.1s ease-in-out;
@@ -165,7 +167,7 @@ table { margin: 0 auto; }
     transform: translate(-50% ,-50%);
     top: 50%;
     border: none!important;
-    width: 64%!important;
+    width: 120%!important;
 }
 .gfq-badge:hover {
 	transform: scale(1.1);
@@ -182,7 +184,8 @@ table { margin: 0 auto; }
 	bottom: 40px;
 	right: 0px;
 	transition: all 0.3s ease-in-out;
-	opacity: 0;
+  opacity: 0;
+  display: none;
 	border-radius: 4px;
 	overflow: hidden;
     padding:30px;
@@ -190,7 +193,8 @@ table { margin: 0 auto; }
 }
 .panel-active {
 	bottom: 80px;
-	opacity: 100;
+  opacity: 100;
+  display: block;
 }
 .gfield.no-label > .gfield_label {
     display: none;
@@ -204,4 +208,9 @@ table { margin: 0 auto; }
 .sm-text{
   color:grey;
   font-size:10px !important;
+}
+.img-slider-text-p{
+  position: absolute;
+   top:15%;
+   left:30%;
 }
