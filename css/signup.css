@@ -1,0 +1,436 @@
+.active{
+  color: #18cbf4 !important;
+}
+.text_first{
+    text-align:center;
+   
+}
+.text_first1{
+    text-align:center;
+    color: #1e74bd;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.color_text{
+    color:blue;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  .nav_menu{
+    padding: 1px 0px 0px 225px;
+    
+  }
+  .btn_login{
+    color: #000;
+  }
+  .btn_login:hover{
+      color:#ff0000ba;
+  }
+  .navbar-brand{
+    color:#ff0000ba;
+  }
+  
+  .nav-item{
+    padding-left: 230px;
+  }
+  .dark-grey-text{
+      color:#000;
+  }
+  body {
+    font-family: 'Cabin !important';
+    overflow-x: hidden!important;
+    /* overflow-y: hidden!important; */
+    background: url('banner/TCN-Home-Page-Slider-Banner-2.PNG') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+ .nav-home{
+    color: #007bff;
+    font-weight: bold;
+ }
+ .nav-link{
+   font-weight: bold;
+ }
+
+ .footer-copyright{
+     background: #000;
+     color:#fff;
+ }
+ .img-slider-text{
+   position: absolute;
+   top:180px;
+   left:20%;
+ }
+ .text-blue{
+   color:#18cbf4;
+ }
+ .mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* .active {
+  background-color: #4CAF50;
+  color: white;
+} */
+.back_color{
+  background:#343a400d;
+}
+.icon_color{
+    width: 61px;
+    height: 61px;
+    background: #0062cc;
+    border-radius: 30px;
+    padding: 8px 17px;
+    color: #fff;
+    font-size: 40px!important;
+    margin-left: 43.5%;
+    position: relative;
+    top: 16px;
+}
+.icon_color1{
+  width: 61px;
+  height: 61px;
+  background: #0062cc;
+  border-radius: 30px;
+  padding: 7px 12px;
+  color: #fff;
+  font-size: 40px!important;
+  margin-left: 43.5%;
+  position: relative;
+  top: 16px;
+}
+.icon_color2{
+  width: 61px;
+  height: 61px;
+  background: #0062cc;
+  border-radius: 30px;
+  padding: 11px 6px;
+  color: #fff;
+  font-size: 40px!important;
+  margin-left: 43.5%;
+  position: relative;
+  top: 16px;
+}
+.back_first{
+  background:#fff;
+  padding: 0px 62px 12px 14px !important;
+  height: 372px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 10px;
+  /* grid-row-gap: 10px; */
+  /* background-color:#343a400d; */
+  padding: 10px;
+  padding: 16px 0px 15px 54px;
+}
+.left-heading11{
+  padding: 9px 53px;
+  top: 24px;
+  position: inherit;
+}
+td i {
+  text-align:center;
+}
+.text-white{
+  text-align: center;
+}
+.btn_signup{
+  background: #f15b8c!important;
+  color: #fff!important;
+  border: #f15b8c!important;
+}
+.btn_signup:hover{
+  background: red!important;
+}
+.background_color{
+    background: #eee;
+}
+.box_text{
+    margin-left: 23.5%!important;
+}
+.texbox_width{
+    width: 70%!important;
+}
+#logreg-forms{
+  position: relative;
+  margin-top: -259px !important;
+  width: 50%;
+  background: white;
+  margin:10vh auto;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0,0,0,0.24);
+transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#logreg-forms form {
+  width: 100%;
+  /* max-width: 627px; */
+  padding: 33px;
+  margin: auto;
+ 
+}
+#logreg-forms .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+#logreg-forms .form-control:focus { z-index: 2; }
+#logreg-forms .form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#logreg-forms .form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#logreg-forms .social-login{
+  width:390px;
+  margin:0 auto;
+  margin-bottom: 14px;
+}
+#logreg-forms .social-btn{
+  font-weight: 100;
+  color:white;
+  width:190px;
+  font-size: 0.9rem;
+}
+
+#logreg-forms a{
+  display: block;
+  padding-top:10px;
+  color:#fff;
+}
+
+#logreg-form .lines{
+  width:200px;
+  border:1px solid red;
+}
+
+
+#logreg-forms button[type="submit"]{ margin-top:10px; }
+
+#logreg-forms .facebook-btn{  background-color:#3C589C; }
+
+#logreg-forms .google-btn{ background-color: #DF4B3B; }
+
+#logreg-forms .form-reset, #logreg-forms .form-signup{ display: none; }
+
+#logreg-forms .form-signup .social-btn{ width:210px; }
+
+#logreg-forms .form-signup input { margin-bottom: 2px;}
+
+.form-signup .social-login{
+  width:210px !important;
+  margin: 0 auto;
+}
+
+.submit{
+background: -webkit-linear-gradient(0deg,  #2dfbff 0%, #3c96ff 100%);
+border-radius: 25px;
+color: #fff;
+}
+
+/* Mobile */
+
+@media screen and (max-width:500px){
+  #logreg-forms{
+      width:300px;
+  }
+
+  #logreg-forms  .social-login{
+      width:200px;
+      margin:0 auto;
+      margin-bottom: 10px;
+  }
+  #logreg-forms  .social-btn{
+      font-size: 1.3rem;
+      font-weight: 100;
+      color:white;
+      width:200px;
+      height: 56px;
+
+  }
+  #logreg-forms .social-btn:nth-child(1){
+      margin-bottom: 5px;
+  }
+  #logreg-forms .social-btn span{
+      display: none;
+  }
+  #logreg-forms  .facebook-btn:after{
+      content:'Facebook';
+  }
+
+  #logreg-forms  .google-btn:after{
+      content:'Google+';
+  }
+
+}
+/* .background_colorblue{
+  background: #3959a8;
+} */
+.pro_fea{
+  background: #3B6AB2;
+  text-align: center;
+  color: white;
+  height: 21%;
+  padding: 1%;
+  width: 10%;
+}
+.pro_fea1{
+  background: red;
+  text-align: center;
+}
+.pro_fea2{
+  background: pink;
+  text-align: center;
+}
+.white-background{
+  background: white;
+}
+
+.registerText{
+  position: absolute;
+    top: 55px;
+    left: 45%;
+  }
+
+  .top-m{
+    padding-top: 4%;
+  }
+
+
+  #logreg-login-forms{
+    position: relative;
+    width: 50%;
+    background: white;
+    margin:10vh auto;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  
+  #logreg-login-forms form {
+    width: 100%;
+    /* max-width: 627px; */
+    padding: 33px;
+    margin: auto;
+   
+  }
+  #logreg-login-forms .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  #logreg-login-forms .form-control:focus { z-index: 2; }
+  #logreg-login-forms .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  #logreg-login-forms .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  #logreg-login-forms .social-login{
+    width:390px;
+    margin:0 auto;
+    margin-bottom: 14px;
+  }
+  #logreg-login-forms .social-btn{
+    font-weight: 100;
+    color:white;
+    width:190px;
+    font-size: 0.9rem;
+  }
+  
+  #logreg-login-forms a{
+    display: block;
+    padding-top:10px;
+    color:#fff;
+  }
+  
+  #logreg-login-form .lines{
+    width:200px;
+    border:1px solid red;
+  }
+  
+  
+  #logreg-login-forms button[type="submit"]{ margin-top:10px; }
+  
+  #logreg-login-forms .facebook-btn{  background-color:#3C589C; }
+  
+  #logreg-login-forms .google-btn{ background-color: #DF4B3B; }
+  
+  #logreg-login-forms .form-reset, #logreg-forms .form-signup{ display: none; }
+  
+  #logreg-login-forms .form-signup .social-btn{ width:210px; }
+  
+  #logreg-login-forms .form-signup input { margin-bottom: 2px;}

@@ -125,3 +125,78 @@
 ul li a{
   font-weight:bold;
 }
+
+table, th, td {
+  border: 0px solid black;
+}
+
+th, td { padding: 5px; }
+
+/* cellspacing */
+table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
+   /* cellspacing="0" */
+
+/* valign */
+th, td { vertical-align: top; }
+
+/* align (center) */
+table { margin: 0 auto; }
+
+/********************************************************************CSS for floating icon*******************************************************/
+.gfq-wrap {
+	z-index: 9999999;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+}
+.gfq-badge {
+	background:#7bb1f4; /*Change this colour to change the circle*/
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+	transition: all 0.1s ease-in-out;
+	transform: scale(1.0);
+	float: right;
+}
+.gfq-badge img {
+	position: relative;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    top: 50%;
+    border: none!important;
+    width: 64%!important;
+}
+.gfq-badge:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.gfq-panel {
+	width: 373px; /*Panel width*/
+	height: auto; /*Panel height*/
+	max-width: 400px; /*Mac Panel width*/
+	max-height: 800px; /*Max Panel height*/
+	background: #F9FAFA;
+	box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.10);
+	position: absolute;
+	bottom: 40px;
+	right: 0px;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+	border-radius: 4px;
+	overflow: hidden;
+    padding:30px;
+  border:1px solid #D9E0E3;
+}
+.panel-active {
+	bottom: 80px;
+	opacity: 100;
+}
+.gfield.no-label > .gfield_label {
+    display: none;
+}
+.gfq-panel input[type="submit"] {
+    width:100% 
+}
+
+/********************************************************************End CSS for floating icon*******************************************************/
