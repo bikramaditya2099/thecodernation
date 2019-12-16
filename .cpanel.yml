@@ -8,5 +8,8 @@ deployment:
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R futura $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp aboutus.html $DEPLOYPATH
+    - /bin/cp courses.html $DEPLOYPATH
+    - /bin/cp Signup.html $DEPLOYPATH
     - /bin/cp logo.png $DEPLOYPATH   
     
