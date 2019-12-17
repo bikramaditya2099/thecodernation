@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/aboutus.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,7 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/aboutus.css">
+
+  
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
        <div class="container">
@@ -44,7 +47,7 @@
             </div>
           
 <div class="nav_menu container">
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" id="btm-nav">
     <!-- <a class="navbar-brand" href="#">About Us</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -66,7 +69,7 @@
               <a class="dropdown-item" href="aboutus.html#def">Our Differentiators</a>
               <a class="dropdown-item" href="aboutus.html#ped">Our Pedagogy</a>
               <div class="dropdown-divider"></div>
-              <!-- <a class="dropdown-item" href="aboutus.html">Something else here</a> -->
+              <a class="dropdown-item" href="aboutus.html#team">Our Team</a>
             </div>
           </li>
          <li class="nav-item">
@@ -122,7 +125,7 @@
   </nav>
 </div>
   
-<div id="demo" class="carousel slide" data-ride="carousel">
+
 
     <!-- Indicators -->
     <!-- <ul class="carousel-indicators">
@@ -142,7 +145,7 @@
             </div>
       </div>
     </div>
-  </div><br>
+  <br>
   <div class="container">
       <div class="row">
           <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
@@ -175,7 +178,7 @@
               </div>
           </div>
       </div><br> -->
-      <div class="container col-sm-12" id="diff">
+      <div class="container col-sm-12 col-md-12 col-xs-12" id="diff">
           <div class="row">
               <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
                   <div class="left-heading11">
@@ -184,8 +187,8 @@
                   </div>
               </div>
           </div>
-          <div class="grid-container">
-            <div class="col-lg back_first col-sm-12">
+          <div class="grid-container col-md-12">
+            <div class="col-lg back_first col-sm-12 col-xs-12">
                 <!-- <i class="fa fa-user-tie" aria-hidden="true"></i> -->
                 <i class="fa fa-user icon_color" aria-hidden="true"></i><br><br>
                 <hr style="width: 80px;height:2px;background: #f15b8c;margin-left: 39.5%;">
@@ -198,7 +201,7 @@
                    Mahindra and like of them.
                 </p>
             </div>
-            <div class="col-sm back_first col-sm-12">
+            <div class="col-sm back_first col-sm-12 col-xs-12">
                 <i class="fa fa-sitemap icon_color1" aria-hidden="true"></i><br><br>
                 <hr style="width: 80px;height:2px;background: #f15b8c;margin-left: 39.5%;">
                 <p style="text-align: center;">
@@ -210,7 +213,7 @@
                      employable and get a job.
                   </p>
             </div>
-            <div class="col-sm back_first col-sm-12">
+            <div class="col-sm back_first col-sm-12 col-xs-12">
                 <i class="fa fa-graduation-cap icon_color2" aria-hidden="true"></i><br><br>
                 <hr style="width: 80px;height:2px;background: #f15b8c;margin-left: 39.5%;">
                 <p style="text-align: center;">
@@ -223,8 +226,8 @@
                   </p>
             </div>
           </div>
-          <div class="grid-container">
-              <div class="col-sm back_first col-sm-12">
+          <div class="grid-container col-md-12">
+              <div class="col-sm back_first col-sm-12 col-xs-12">
                   <!-- <i class="fa fa-user-tie" aria-hidden="true"></i> -->
                   <i class="fa fa-user icon_color" aria-hidden="true"></i><br><br>
                   <hr style="width: 80px;height:2px;background: #f15b8c;margin-left: 39.5%;">
@@ -235,7 +238,7 @@
           
                   </p>
               </div>
-              <div class="col-sm back_first col-sm-12">
+              <div class="col-sm back_first col-sm-12 col-xs-12">
                   <i class="fa fa-sitemap icon_color1" aria-hidden="true"></i><br><br>
                   <hr style="width: 80px;height:2px;background: #f15b8c;margin-left: 39.5%;">
                   <p style="text-align: center;">
@@ -251,7 +254,7 @@
                       Long-term students.
                     </p>
               </div>
-              <div class="col-sm back_first col-sm-12">
+              <div class="col-sm back_first col-sm-12 col-xs-12">
                   <i class="fa fa-graduation-cap icon_color2" aria-hidden="true"></i><br><br>
                   <hr style="width: 80px;height:2px;background:#f15b8c;margin-left: 39.5%;">
                   <p style="text-align: center;">
@@ -308,7 +311,7 @@
             </div>
         </div>
     </div><br>
-    <div class="container" >
+    <div class="container" id="team">
         <div class="left-heading">
             <h5>Our Team</h5>
             <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;height:2px;background: #92ebfc;">
@@ -345,10 +348,17 @@
       </p>
     </div>
     
-    <!-- <div class="mySlides">
-      <q>I have not failed. I've just found 10,000 ways that won't work.</q>
-      <p class="author">- Thomas A. Edison</p>
-    </div> -->
+     <div class="mySlides">
+      <div class="team-img">
+
+        <img src="banners/hs.jfif" height="150px" width="150px" class="bord-rad">
+      </div>
+      <br>
+      <p class="author">  Hirdesh Singhal |<a href="https://in.linkedin.com/in/hirdeshsinghal" style="text-decoration: none;"> <img src="banners/LinkedIn-Logo.png" height="30px" width="30px"></a></p>
+      <p>Chief Executive Officer. He is currently responsible for developing it into a high quality institution and make it a global leader in providing cutting edge higher education leveraging technology. The start up has been pioneer across the globe in successfully implementing outcome based education.
+                    
+      </p>
+    </div> 
     
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
@@ -481,7 +491,7 @@
       
         <!-- Copyright -->
         <div class="footer-copyright text-center text-white-50 py-3">© 2019 Copyright
-          <a class="dark-blue-text" href="#"> THECODERSNATION </a> | a talent21 subsidiary</p>
+          <a class="dark-blue-text" href="#"> THECODERSNATION </a> | a <a href="http://www.talent21.in">talent21</a> subsidiary</p>
         </div>
         <!-- Copyright -->
       

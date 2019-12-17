@@ -1,4 +1,6 @@
-
+body{
+  overflow-x: hidden!important;
+}
  .text-blue{
    color:#18cbf4;
  }
