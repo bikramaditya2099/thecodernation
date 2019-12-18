@@ -52,44 +52,14 @@ body{
   background:#343a400d;
 }
 .icon_color{
-    width: 61px;
-    height: 61px;
-    background: #0062cc;
-    border-radius: 30px;
-    padding: 8px 17px;
-    color: #fff;
-    font-size: 40px!important;
-    margin-left: 43.5%;
-    position: relative;
-    top: 16px;
-}
-.icon_color1{
-  width: 61px;
-  height: 61px;
-  background: #0062cc;
-  border-radius: 30px;
-  padding: 7px 12px;
-  color: #fff;
-  font-size: 40px!important;
-  margin-left: 43.5%;
+  width: 65px;
+  margin-left: 37.5%!important;
   position: relative;
-  top: 16px;
-}
-.icon_color2{
-  width: 61px;
-  height: 61px;
-  background: #0062cc;
-  border-radius: 30px;
-  padding: 11px 6px;
-  color: #fff;
-  font-size: 40px!important;
-  margin-left: 43.5%;
-  position: relative;
-  top: 16px;
+  top: 6px;
 }
 .back_first{
   background:#fff;
-  padding: 0px 62px 12px 14px !important;
+  /* padding: 0px 62px 12px 14px !important; */
   height: 372px;
 }
 
@@ -100,10 +70,10 @@ body{
   /* grid-row-gap: 10px; */
   /* background-color:#343a400d; */
   padding: 10px;
-  padding: 16px 0px 15px 54px;
+  padding: 16px 260px!important;
 }
 .left-heading11{
-  padding: 9px 53px;
+  padding: 5px 52px 7px 263px;
   top: 24px;
   position: inherit;
 }
@@ -337,4 +307,10 @@ q {font-style: italic;}
 .author {color: cornflowerblue;}
 .bord-rad{
     border-radius: 100px;
+}
+.text-white11{
+  color: #fff;
+}
+.our_pedagogy{
+  height:389px!important;
 }

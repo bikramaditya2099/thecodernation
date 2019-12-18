@@ -10,8 +10,16 @@
         height: 142px;
        
     }
+    .nav-item {
+        padding-left: 0px;
+    }
     .text-white {
         font-size: 1rem;
+    }
+    .text-white11{
+        font-size: 14px;
+        position: relative;
+        top: 28px;
     }
     .text-blue{
         font-size: 1rem;
@@ -34,6 +42,12 @@
     nav#btm-nav button span {
         display: none;
     }
+    .text-grey{
+        padding: 10px;
+    }
+    .input-group-text {
+        padding: 0.105rem .26rem!important;
+    }
     /* client page! */
      .img_width{
         max-width: 32%;
@@ -42,5 +56,9 @@
         padding-left: 21px;
      }
      /* courses page! */
-
+     .md-text {
+        color: #616365;
+        font-size: 9px;
+        margin-top: -8px;
+    }
   }

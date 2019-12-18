@@ -85,8 +85,8 @@
    top:180px;
    left:20%;
  }
- .text-blue{
-   color:#18cbf4;
+ .text-blue11{
+   color:#3b69b2;
  }
  .mobile-container {
   max-width: 480px;
@@ -340,6 +340,14 @@ color: #fff;
   padding: 1%;
   width: 10%;
 }
+.pro_featurs {
+  background: #3B6AB2;
+  color: white;
+  height: 21%;
+  padding: 1%;
+  width: 10%;
+  padding-top: 22px;
+}
 .pro_fea1{
   background: red;
   text-align: center;
@@ -354,15 +362,31 @@ color: #fff;
 
 .registerText{
   position: absolute;
-    top: 55px;
+    top: 25px;
     left: 45%;
   }
 
   .top-m{
     padding-top: 4%;
   }
-
-
+  .btn-more{
+    border-color: #3b69b2!important;
+    color:#3b69b2!important;
+    padding: 4px 49px 7px 41px!important;
+  }
+  .btn-more:hover{
+    border-color: #3b69b2!important;
+    color:#fff!important;
+    background-color:#3b69b2!important ;
+    padding: 4px 49px 7px 41px!important;
+  }
+  .btn-moreinfo{
+    background-color: #3b69b2!important;
+    padding: 4px 49px 7px 41px!important;
+  }
+  .md-text{
+    color: #616365;
+  }
   #logreg-login-forms{
     position: relative;
     width: 50%;

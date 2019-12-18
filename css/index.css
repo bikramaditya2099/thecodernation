@@ -1,13 +1,19 @@
+body{
+  color: #616365;
+}
 .active{
   color: #18cbf4 !important;
 }
 .text_first{
     text-align:center;
-   
+    font-size: 20px;
 }
 .text_first1{
     text-align:center;
     color: #1e74bd;
+}
+.text_first2{
+  text-align:center;
 }
 .carousel-inner img {
     width: 100%;
@@ -73,7 +79,7 @@
    left:15%;
  }
  .text-blue{
-   color:#18cbf4;
+   color:#18cbf4 ;
  }
  .dropdown-menu {
   position: absolute;
@@ -103,6 +109,7 @@
 }
 .nav-link {
   font-weight: bold;
+  
 }
 
 .btn-danger {
@@ -123,6 +130,9 @@
   float: left;
   padding: 13px;
   font-size: 27px;
+}
+.soc-media{
+  margin-top: -21px;
 }
 ul li a{
   font-weight:bold;
@@ -213,6 +223,7 @@ table { margin: 0 auto; box-shadow: 0px 16px 24px -7px grey;
 }
 .img-slider-text-p{
   position: absolute;
-   top:15%;
-   left:30%;
+  top: 20%;
+  left: 30%;
+  text-align: center;
 }
