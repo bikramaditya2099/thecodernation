@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home Page</title>
+  <title>FutureSkills</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- <script src="js/"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="css/bootstrap-dropdownhover.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -60,13 +61,13 @@
           <a class="nav-link active" href="#" style="color: #000;">Home</a>
         </li>
         <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #000;">
+          <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdown" role="button" data-toggle="dropdown" data-hover="dropdown" style="color: #000;" data-hover="dropdown">
           About us
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="aboutus.html#diff">Our Differentiators</a>
             <a class="dropdown-item" href="aboutus.html#ped">Our Pedagogy</a>
-            <div class="dropdown-divider"></div>
+            
            <a class="dropdown-item" href="aboutus.html#team">Our Team</a>
           </div>
         </li>
@@ -161,8 +162,13 @@
               <!-- Content -->
               <h6 class="text-uppercase font-weight-bold">Office Address</h6>
               <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;height:1px;background: #92ebfc;">
-              <p>121 E 2/7 11th Floor <br> DLF Cyber City <br> Bhubaneswar, Odisha <br> India 
-                <br> <br>  Phone : +91-9845040735 <br> Fax : 001-081-897654 <br> Email : info@thecodersnation.com
+              <p>#926, DLF Cybercity, <br>
+                Technology Corridor, <br>
+                Chandaka Industrial Estate,
+                  <br> 
+                  Bhubaneswar, Odisha 751024
+                <br> <br>  Phone : 001-081-897654 <br> Fax : 001-081-897654 <br> Email : info@thecodersnation.com
+                </p>
             </div>
             <!-- Grid column -->
       
@@ -240,7 +246,7 @@
       
         <!-- Copyright -->
         <div class="footer-copyright text-center text-white-50 py-3">Copyright © 2019 
-          <a class="dark-blue-text" href="#"> THE CODERS NATION</a> | a <a href="http://www.talent21.in">talent21</a> subsidiary
+          <a class="dark-blue-text" href="#"> THE CODERS NATION</a> | a  Clients (<a href="http://www.talent21.in">talent21</a>) subsidiary
         </div>
         <!-- Copyright -->
       
@@ -290,7 +296,20 @@
       
 </script>
 </div>
-
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+   Dropdown <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li class="dropdown">
+      <a href="#">One more dropdown</a>
+    </li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
 </body>
 </html>
 
