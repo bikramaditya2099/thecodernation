@@ -1,0 +1,36 @@
+
+    <div class="page" ng-controller="otpValidationController">
+      <div class="page-single">
+        <div class="container">
+          <div class="row">
+            <div class="col col-login mx-auto">
+              <div class="text-center mb-6">
+                <img src="./assets/brand/tabler.svg" class="h-6" alt="">
+              </div>
+              <form class="card" >
+                <div class="card-body p-6">
+                  <div class="card-title">Email OTP Validation</div>
+                  <p class="text-muted" ng-if="otpValidated==false">Enter your 4 digit otp send to your registered email. Otp is valid for 5 minutes. Do not share your otp with anyone !!</p>
+                  <div class="form-group" ng-if="otpValidated==false">
+                    <label class="form-label" for="exampleInputEmail1">OTP</label>
+                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter OTP" ng-model="val.otp">
+                  </div>
+                  <div class="form-footer">
+                      <p class="text-muted" ng-if="otpError==true">Your OTP is either expired or invalid. Please click on resend otp .</p>
+                    <p class="text-success" ng-if="otpValidated==true">Your OTP is successfuly validated Please click on login button to continue.</p>
+                    <a  class="btn btn-primary btn-block" href="#!login" ng-if="otpValidated==true">Login</a>
+                    <button  class="btn btn-primary btn-block" ng-click="validateOTP()" ng-if="otpValidated==false">Submit</button>
+                  
+                  </div>
+                </div>
+              </form>
+              <div class="text-center text-muted"  ng-if="otpValidated==false">
+                Not recieved otp, <a href="#!emailValidate" ng-click="resendOTP()">Resend OTP</a>
+                <p class="text-muted" ng-if="resendSuccess==true">Your OTP is successfuly resend to your registered email</p>
+                <p class="text-muted" ng-if="resendError==true">There is an error resending otp. Please try again !!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

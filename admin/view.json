@@ -1,0 +1,27 @@
+[
+      {   "id":1,
+          "itemname":"chiken",
+           "quantity":"100gm",
+           "fixprice":"200kg"
+      },
+       {    "id":2,
+           "itemname":"fish",
+            "quantity":"200gm",
+            "fixprice":"200kg"
+        },
+        {   "id":3,
+            "itemname":"prawn",
+            "quantity":"300gm",
+            "fixprice":"200kg"
+         },
+        {   "id":4,
+            "itemname":"leg piece",
+            "quantity":"400gm",
+            "fixprice":"200kg"
+        },   
+         {   "id":5,
+             "itemname":"bonepiece",
+             "quantity":"500gm",
+             "fixprice":"200kg"
+         }
+]

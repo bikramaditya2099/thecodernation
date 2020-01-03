@@ -1,0 +1,121 @@
+@media(min-width: 360px) and (max-width: 640px){
+    body {
+      overflow-x: hidden!important;
+    }
+    /* Index page! */
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 142px;
+       
+    }
+    .nav-item {
+        padding-left: 0px;
+    }
+    .text-white {
+        font-size: 1rem;
+    }
+    .text-white11{
+        font-size: 14px;
+        position: relative;
+        top: 11px;
+        padding-left: 19px;
+    }
+    .text-blue{
+        font-size: 1rem;
+    }
+    .fa{
+        padding: 16px;
+    }
+    .text_first1{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .img-slider-text-p {
+        top: 3px;
+        left: 4%;
+        text-align: center;
+        font-size: 20px;
+    }
+    nav#btm-nav button {
+        display: none;
+    }
+    nav#btm-nav button span {
+        display: none;
+    }
+    .text-grey{
+        padding: 10px;
+    }
+    .input-group-text {
+        padding: 0.105rem .26rem!important;
+    }
+    .soc-media{
+        padding-left: 23px;
+    }
+    .btn_login{
+        padding-right: 175px!important;
+        padding-left: 1px;
+    }
+    .text_first{
+        font-size: 14px;
+    }
+    .text-white-50 {
+        padding: 53px;
+    }
+    .text_first2 {
+        font-size: 9px;
+    }
+    /* client page! */
+     .img_width{
+        max-width: 32%;
+     }
+     .padding_left{
+        padding-left: 21px;
+     }
+     /* courses page! */
+     .md-text {
+        color: #616365;
+        font-size: 9px;
+        margin-top: -8px;
+    }
+    /* Log in page */
+    #logreg-forms {
+        margin-top: -75px !important;
+        width: 369px;
+    }
+    #logreg-forms .form-control{
+        padding: 3px;
+    }
+    #logreg-forms form {
+        padding: 13px;
+    }
+    #logreg-forms a {
+        padding-top: 0px;
+    }
+    #logreg-login-forms {
+        width: 89%;
+    }
+    #logreg-login-forms form {
+        padding: 4px;
+    }
+    #logreg-login-forms .form-control {
+        padding: 5px;
+    }
+    #logreg-login-forms a {
+        padding-top: 0px;
+    }
+    .font-weight-normal {
+        font-size: 19px;
+    }
+    .account{
+        padding-left: 86px!important;
+    }
+    /* About us page */
+    .left-heading11 {
+        padding: 0px 0px 0px 0px;
+    }
+    .grid-container {
+        padding: 0px 0px!important;
+    }
+  }

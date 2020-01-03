@@ -1,0 +1,347 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light">
+   <a href="/"> <img class="navbar-brand " src="logo.png" height="73px" width="65px"></a>
+          <!-- <a class="navbar-brand " href="#">THECODERSNATION</a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                  <div class="input-group md-form form-sm form-2 pl-0">
+                          <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+                          <div class="input-group-append">
+                            <span class="input-group-text red lighten-3" id="basic-text1"><i class="fa fa-search text-grey"
+                                aria-hidden="true"></i></span>
+                          </div>
+                        </div>
+                        <a class="nav-link btn_login" href="#">Log In</a>
+              <button href="Signup.html"  class="btn btn-outline-danger my-2 my-sm-0 btn_signup " type="submit">Sign Up Free</button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    
+<div class="nav_menu container">
+<nav class="navbar navbar-expand-lg navbar-light" id="btm-nav">
+<!-- <a class="navbar-brand" href="#">About Us</a> -->
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+  <!-- <li class="nav-item active">
+    <a class="nav-link" href="#">Admissions<span class="sr-only">(current)</span></a>
+  </li> -->
+  <li class="nav-home">
+    <a class="nav-link " href="index.html" style="color: #000;">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #000;">
+      About us
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="aboutus.html#diff">Our Differentiators</a>
+        <a class="dropdown-item" href="aboutus.html#ped">Our Pedagogy</a>
+        <!-- <div class="dropdown-divider"></div> -->
+        <a class="dropdown-item" href="aboutus.html#team">Our Team</a>
+      </div>
+    </li>
+   <li class="nav-item">
+      <a class="nav-link" href="courses.html" style="color: #000;">Courses</a>
+   </li>
+   <li class="nav-item">
+      <a class="nav-link " href="clients.html" style="color: #000;">Clients</a>
+   </li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="banners/TCN-About-Us-Banner.png" alt="Chicago" width="1100" height="500">
+<div class="registerText">
+  <h2 class="text-white">Register</h2>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid background_colorblue" ng-controller="registrationController">
+<div id="logreg-forms">
+<h1 class="h3 mb-3 font-weight-normal top-m" style="text-align: center"> Create a new account</h1>
+  <hr style="width: 80px;height:2px;background: #92ebfc;margin-left: 34.5%;">
+<form>
+    <div class="form-row">
+      <div class="col">
+        First Name*
+        <input type="text" class="form-control" ng-model="fname">
+      </div>
+      <div class="col">
+          Last Name*
+        <input type="text" class="form-control" ng-model="lname">
+      </div>
+    </div>
+  
+      <div class="form-row">
+        <div class="col">
+          Email*
+          <input type="email" class="form-control"  ng-model="email">
+        </div>
+        <div class="col">
+          Password*
+          <input type="password" class="form-control" ng-model="password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          Phone*
+          <input type="number" class="form-control"  ng-model="phoneNumber">
+        </div>
+        <div class="col"></div>
+        
+      </div>
+    <br>
+        <div class="form-row">
+          <div class="col">
+              <input type="checkbox" name="vehicle3" value="Boat" checked> Save my name , email and phone in this browser for the next time i log in
+          </div>
+        </div>
+        <br>
+        <p style="color:red" ng-if="reg_error==true"> Oops !! you Already registered</p>
+        <div class="form-row">
+          <div class="col">
+            <button class="btn btn-outline-primary" style="width: 100%;">Cancel</button>
+          </div>
+          
+          <div class="col">
+              <button class="btn btn_signup" style="width: 100%;"  ng-click="createAccount()">Sign Up</button>
+          </div>
+        </div>
+      </form> 
+</div>
+</div>
+<div class="container">
+<a href="#" style="color: #000;display:inline-block!important;text-decoration: none;font-weight: bold;padding-left: 417px;" class="account">Already have an account?</a>
+  
+</div><br>
+<div id="logreg-login-forms">
+<h1 class="h3 mb-3 font-weight-normal top-m" style="text-align: center"> Login </h1>
+  <hr style="width: 80px;height:2px;background: #92ebfc;margin-left: 45.5%;">
+<form>
+    <div class="form-row">
+      <div class="col">
+        Username*
+        <input type="text" class="form-control" ng-model="formmodel.username">
+      </div>
+      <div class="col">
+         Password*
+        <input type="password" class="form-control" ng-model="formmodel.password">
+      </div>
+    </div><br>
+        <div class="form-row">
+          <div class="col">
+            
+          </div>
+          <div class="col">
+            <p style="color:red" ng-if="validuser==false"> Oops !! you provided an invalid credentials</p>
+              <button class="btn btn_signup" style="width: 100%;" ng-click="signIn()">Submit</button>
+          </div>
+        </div>
+      </form> 
+</div>
+<hr style="margin-top: 3rem;">
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5">
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+    <img class="navbar-brand " src="banners/logo.jpg"  style="height: 79px;width: 72px;">
+    <!-- Grid row -->
+    <div class="row mt-3 dark-grey-text">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">Office Address</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px;background: #92ebfc;">
+          <p>#926, DLF Cybercity, <br>
+            Technology Corridor, <br>
+            Chandaka Industrial Estate,
+              <br> 
+              Bhubaneswar, Odisha 751024
+            <br> <br> Phone : 001-081-897654 <br> Fax : 001-081-897654 <br> Email : info@thecodersnation.com
+            </p>
+        </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">TCN</h6>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto foo_color" style="width: 60px; height:2px;background: #92ebfc;">
+        <p>
+          <a class="dark-grey-text" href="#!">Home</a>
+        </p>
+        <p>
+          <a class="dark-grey-text" href="#!">About Us</a>
+        </p>
+        <p>
+          <a class="dark-grey-text" href="#!">Courses</a>
+        </p>
+        <p>
+          <a class="dark-grey-text" href="#!">Contact Us</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Follow Us On Social Media</h6>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px;background: #92ebfc;">
+        <div class="soc-media">
+        <p>
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>
+        </p>
+        <p>
+           <i class="fa fa-twitter" aria-hidden="true"></i>
+        </p>
+        <p>
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </p>
+        <p>
+          <i class="fa fa-google-plus-square" aria-hide="true"></i>
+        </p>
+      </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Get In Touch</h6>
+        <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; height:2px;background: #92ebfc;">
+        <p>
+          First Name:<br>
+          <input type="text" value=""></p>
+        <p>
+              Last Name:<br>
+              <input type="text" value=""></p>
+        <p>
+              Email:<br>
+              <input type="email" value=""></p>
+        <p>
+          <button class="btn btn-danger btn_signup">Let's Talk</button></p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white-50 py-3">© 2019 Copyright
+    <a class="dark-blue-text" href="#"> THE CODERS NATION</a> | a  (<a href="http://www.talent21.in">talent21</a>) subsidiary
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<div class="gfq-wrap">
+    <div class="gfq-panel">
+        <h1>Contact us</h1>
+        <p> Get in touch now to see how we can help you.</p>
+        <form>
+            <div class="form-row">
+                <div class="col-md-12">
+                  Email*
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-md-12">
+                    Phone*
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group green-border-focus">
+                        <label for="exampleFormControlTextarea5">Query*</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea5" rows="3"></textarea>
+                      </div>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                 
+                  <div class="col">
+                      <button class="btn btn-danger" style="width: 100%;"><a href="Signup.html" style="color: #fff;text-decoration: none;">Submit</a></button>
+                  </div>
+                </div>
+      </form>
+      </div>
+    <div class="gfq-badge">
+      <img src="banners/lt.png" alt="Icon"/>
+    </div>
+    <script type="text/javascript">
+      jQuery(document).ready(function( $ ){
+          $('.gfq-badge').click(function() {
+              $('.gfq-panel').toggleClass('panel-active');
+          });
+      });
+      
+</script>
+</div>
+
+</div>
+
+<!-- <div class="page">
+    <div class="page-single">
+      <div class="container">
+        <div class="row">
+          <div class="col col-login mx-auto">
+            <div class="text-center mb-6">
+              <img src="./assets/brand/tabler.svg" class="h-6" alt="">
+            </div>
+            <form class="card"  >
+              <div class="card-body p-6">
+                <div class="card-title">Login to your account</div>
+                <div class="form-group">
+                  <label class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model="formmodel.username">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">
+                    Password
+                    <a href="./forgot-password.html" class="float-right small">I forgot password</a>
+                  </label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="formmodel.password">
+                </div>
+                <div class="form-group">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" />
+                    <span class="custom-control-label">Remember me</span>
+                  </label>
+                </div>
+                <div class="form-footer">
+                        <p style="color:red" ng-if="validuser==false"> Oops !! you provided an invalid credentials</p>
+                  <button  class="btn btn-primary btn-block" ng-click="signIn()">Sign in</button>
+                </div>
+              </div>
+            </form>
+            <div class="text-center text-muted">
+              Don't have account yet? <a href="#!register">Sign up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

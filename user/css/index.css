@@ -1,0 +1,245 @@
+body{
+  color: #616365;
+}
+.active{
+  color: #18cbf4 !important;
+}
+.text_first{
+    text-align:center;
+    font-size: 20px;
+}
+.text_first1{
+    text-align:center;
+    color: #1e74bd;
+}
+.text_first2{
+  text-align:center;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.color_text{
+    color:blue;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  /* .nav_menu{
+    padding: 1px 0px 0px 225px;
+    
+  } */
+  .btn_login{
+    color: #000;
+  }
+  .btn_login:hover{
+      color:#ff0000ba;
+  }
+  .navbar-brand{
+    color:#ff0000ba;
+  }
+  
+  .nav-item{
+    padding-left: 230px;
+  }
+  .dark-grey-text{
+      color:#000;
+  }
+
+ .nav-home{
+    color: #007bff;
+ }
+
+ .footer-copyright{
+     background: #000;
+     color:#fff;
+ }
+ .img-slider-text{
+   position: absolute;
+   top:15%;
+   left:15%;
+ }
+ .text-blue{
+   color:#18cbf4 ;
+ }
+ .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  left: inherit;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 350px;
+}
+.nav-link {
+  font-weight: bold;
+  
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #EF447C;
+  border-color: #EF447C;
+}
+
+.btn-danger:not(:disabled):not(.disabled).active, .btn-danger:not(:disabled):not(.disabled):active, .show>.btn-danger.dropdown-toggle {
+  color: #fff;
+  background-color: #EF447C;
+  border-color: #EF447C;
+}
+
+.soc-media p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  float: left;
+  padding: 13px;
+  font-size: 27px;
+}
+.soc-media{
+  margin-top: -21px;
+}
+ul li a{
+  font-weight:bold;
+}
+
+table, th, td {
+  border: 1px solid #e6e1e1;
+}
+
+th, td { padding: 5px; }
+
+/* cellspacing */
+table { border-collapse: separate; border-spacing: 3px; } /* cellspacing="5" */
+   /* cellspacing="0" */
+
+/* valign */
+th, td {     vertical-align: top;
+  background: white;
+  border-right-width: 7px;
+}
+
+/* align (center) */
+table { margin: 0 auto; box-shadow: 0px 16px 24px -7px grey;
+  background: #e6e1e1;}
+
+/********************************************************************CSS for floating icon*******************************************************/
+.gfq-wrap {
+	z-index: 9999999;
+	position: fixed;
+	bottom: 75px;
+	right: 40px;
+}
+.gfq-badge {
+	 /*Change this colour to change the circle*/
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+	transition: all 0.1s ease-in-out;
+	transform: scale(1.0);
+	float: right;
+}
+.gfq-badge img {
+	position: relative;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    top: 50%;
+    border: none!important;
+    width: 120%!important;
+}
+.gfq-badge:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.gfq-panel {
+	width: 373px; /*Panel width*/
+	height: auto; /*Panel height*/
+	max-width: 400px; /*Mac Panel width*/
+	max-height: 800px; /*Max Panel height*/
+	background: #F9FAFA;
+	box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.10);
+	position: absolute;
+	bottom: 40px;
+	right: 0px;
+	transition: all 0.3s ease-in-out;
+  opacity: 0;
+  display: none;
+	border-radius: 4px;
+	overflow: hidden;
+    padding:30px;
+  border:1px solid #D9E0E3;
+}
+.panel-active {
+	bottom: 80px;
+  opacity: 100;
+  display: block;
+}
+.gfield.no-label > .gfield_label {
+    display: none;
+}
+.gfq-panel input[type="submit"] {
+    width:100% 
+}
+
+/********************************************************************End CSS for floating icon*******************************************************/
+
+.sm-text{
+  color:grey;
+  font-size:10px !important;
+}
+.img-slider-text-p{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  text-align: center;
+}
+
+#spinner {
+  background: #ffffff;
+  color: #666666;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: center;
+  padding-top: 10%;
+}
