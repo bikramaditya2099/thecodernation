@@ -17,6 +17,59 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/index.js"></script>
+  <style>
+    .scroll-left {
+      height: 0px;
+    overflow: hidden;
+    position: relative;
+    background: #5399f1;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 50px;
+     
+    }
+    .scroll-left p a{
+      color:white;
+    }
+    .scroll-left p {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     line-height: 50px;
+     text-align: center;
+     /* Starting position */
+     -moz-transform:translateX(50%);
+     -webkit-transform:translateX(50%);	
+     transform:translateX(100%);
+     	
+     -moz-animation: scroll-left 30s linear infinite;
+     -webkit-animation: scroll-left 30s linear infinite;
+     animation: scroll-left 30s linear infinite;
+    }
+    /* Move it (define the animation) */
+    @-moz-keyframes scroll-left {
+     10%   { -moz-transform: translateX(50%); }
+     90% { -moz-transform: translateX(-50%); }
+    }
+    @-webkit-keyframes scroll-left {
+     10%   { -webkit-transform: translateX(50%); }
+     90% { -webkit-transform: translateX(-50%); }
+    }
+    @keyframes scroll-left {
+     10%   { 
+     -moz-transform: translateX(50%); /* Browser bug fix */
+     -webkit-transform: translateX(50%); /* Browser bug fix */
+     transform: translateX(50%); 		
+     }
+     90% { 
+     -moz-transform: translateX(-50%); /* Browser bug fix */
+     -webkit-transform: translateX(-50%); /* Browser bug fix */
+     transform: translateX(-50%); 
+     }
+    }
+    </style>
 </head>
 <body>
        <div class="container">
@@ -133,7 +186,10 @@
     <a class="carousel-control-next" href="#demo" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
-  </div><br><br>
+  </div>
+  <div class="scroll-left">
+    <p><img src="/assets/img/new.gif" height="30" width="34"><a href="/user"> Hurry !! Registrations are open now. Click here to register </a></p>
+    </div>
   <div>
       <p class="text_first"><b>
           Our faith - We build Capabilities!<br>
