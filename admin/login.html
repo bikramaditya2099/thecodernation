@@ -1,0 +1,58 @@
+<div class="limiter" ng-controller="loginController">
+	<div class="container-login100">
+		<div class="wrap-login100">
+			<div class="login100-pic js-tilt" data-tilt>
+				<img src="images/img-01.png" alt="IMG">
+			</div>
+
+			<form class="login100-form validate-form">
+				<span class="login100-form-title">
+					Admin Login
+				</span>
+				<div ng-if="!loginValidated">
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input100" type="text" name="email" placeholder="Email" ng-model="form.username">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<input class="input100" type="password" name="pass" placeholder="Password" ng-model="form.password">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-lock" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
+			<div ng-if="loginValidated">
+				<div class="wrap-input100 validate-input" >
+					<input class="input100" type="number"  placeholder="MFA CODE" ng-model="form.code">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-keyboard-o" aria-hidden="true"></i>
+					</span>
+				</div>
+			</div>
+				<p style="color:red" ng-if="loginError">Invalid Credentials</p>
+				<p style="color:red" ng-if="mfaError">Invalid MFA</p>
+				
+				<div class="container-login100-form-btn" ng-if="!loginValidated">
+					<button class="login100-form-btn" ng-click="validateLogin()">
+						Login
+					</button>
+				</div>
+				<div class="container-login100-form-btn" ng-if="loginValidated">
+					<button class="login100-form-btn" ng-click="validateMFA()">
+						Login
+					</button>
+				</div>
+
+			
+
+
+			</form>
+		</div>
+	</div>
+</div>
