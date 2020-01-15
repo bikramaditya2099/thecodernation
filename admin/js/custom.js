@@ -17,14 +17,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.service('urlService', function() {
     this.host = function () {
-     // return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-     return "http://localhost:8081/";
+     return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+    // return "http://localhost:8081/";
     }
     this.adminLoginUrl=function(){
         return "adminlogin";
     }
     this.adminUserInfo=function(){
         return "getadminuser";
+    }
+    this.validateMFACode=function(){
+        return "validateMFACode";
     }
 });
 
@@ -39,7 +42,7 @@ app.controller('loginController', function($scope,$http,urlService,$window) {
     $scope.mfaError=false;
 
     $("#spinner").show();
-    var requrl="http://ec2-54-214-109-157.us-west-2.compute.amazonaws.com:8080/validateMFACode";
+    var requrl=urlService.host()+urlService.validateMFACode();
     var json={};
     json.email=$scope.form.username;
     json.code=$scope.form.code;
