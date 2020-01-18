@@ -18,7 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.service('urlService', function() {
     this.host = function () {
      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-    // return "http://localhost:8081/";
+   // return "http://localhost:8081/";
     }
     this.adminLoginUrl=function(){
         return "adminlogin";
@@ -29,6 +29,9 @@ app.service('urlService', function() {
     this.validateMFACode=function(){
         return "validateMFACode";
     }
+    this.sendsms=function(){
+        return "sendsms";
+    }
 });
 
 app.controller('loginController', function($scope,$http,urlService,$window) {
@@ -37,12 +40,13 @@ app.controller('loginController', function($scope,$http,urlService,$window) {
    $scope.loginError=false;
    $scope.form={};
    $scope.mfaError=false;
+   $scope.showSMS=true;
 
    $scope.validateMFA=function(){
     $scope.mfaError=false;
 
     $("#spinner").show();
-    var requrl=urlService.host()+urlService.validateMFACode();
+    var requrl="https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/"+urlService.validateMFACode();
     var json={};
     json.email=$scope.form.username;
     json.code=$scope.form.code;
@@ -53,7 +57,7 @@ app.controller('loginController', function($scope,$http,urlService,$window) {
   })
   .then(function(response) {
     $("#spinner").hide();
-     if(response.data=="SUCCESS"){
+     if(response.data.status=="SUCCESS"){
          var userInfo={};
          userInfo.email=$scope.form.username;
          userInfo.adminToken=$scope.adminToken;
@@ -104,7 +108,45 @@ $scope.validateLogin=function(){
   });
 
   app.controller('adminController', function($scope,$http,urlService,$window) {
+    $scope.showSMS=false;
+    $scope.form={};
+    $scope.activeSMS=function(){
+        $scope.showSMS=true; 
+    }
+    $scope.sendsms=function(){
+        $("#spinner").show();
+        var numbers=$scope.form.numbers;
+        var result=numbers.split(",");
+        var json={};
+        json.numbers=result;
+        json.text=$scope.form.smstext;
+        json.senderId="SMSTST";
+        var requrl=urlService.host()+urlService.sendsms();
+    
+        $http({
+            url: requrl,
+            method: "POST",
+            headers: {
+                'token': $scope.userInfo.adminToken
+            },
+            data:json
+        })
+        .then(function(response) {
+            $("#spinner").hide();
+            console.log(response);
+            if(response.data.ErrorCode=="000"){
+                alert("SMS Sent Successfully");
+                $scope.form.numbers="";
+                $scope.form.smstext="";
 
+            }
+        }, 
+        function(response) { // optional
+               console.log(response);
+               $window.location.href="#!error";
+        });
+
+    }
     $scope.logout=function(){
         sessionStorage.userInfo="undefined";
 
