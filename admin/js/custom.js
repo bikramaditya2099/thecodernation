@@ -1,5 +1,77 @@
 $("#spinner").hide();
 var app = angular.module("adminApp", ['ui.router','ui.bootstrap']);
+
+app.service('urlService', function() {
+    this.host = function () {
+    return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+    //return "http://localhost:8081/";
+    }
+    this.adminLoginUrl=function(){
+        return "adminlogin";
+    }
+    this.adminUserInfo=function(){
+        return "getadminuser";
+    }
+    this.validateMFACode=function(){
+        return "validateMFACode";
+    }
+    this.sendsms=function(){
+        return "sendsms";
+    }
+    this.importUrl=function(){
+        return "import";
+    }
+});
+
+app.directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+            });
+        }
+    };
+}]);
+
+app.service('fileUpload', ['$http', function ($http) {
+    this.uploadFileToUrl = function(file, uploadUrl,adminToken){
+        var fd = new FormData();
+        fd.append('file', file);
+        $http({
+            url: uploadUrl,
+            method: "POST",
+            data: fd,
+            headers: {'Content-Type': undefined,'token':adminToken}
+      })
+      .then(function(response) {
+       return response;
+      }, 
+      function(response) { // optional
+             console.log(response);
+            // $window.location.href="#!error";
+      });
+
+
+
+        // $http.post(uploadUrl, fd, {
+        //     transformRequest: angular.identity,
+        //     headers: {'Content-Type': undefined,'token':adminToken}
+        // })
+        // .then(function(response){
+        //     console.log(response);
+        // })
+        // .error(function(response){
+        //     console.log(response)
+        // });
+    }
+}]);
+
 app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
@@ -15,24 +87,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
    
 });
 
-app.service('urlService', function() {
-    this.host = function () {
-     return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-   // return "http://localhost:8081/";
-    }
-    this.adminLoginUrl=function(){
-        return "adminlogin";
-    }
-    this.adminUserInfo=function(){
-        return "getadminuser";
-    }
-    this.validateMFACode=function(){
-        return "validateMFACode";
-    }
-    this.sendsms=function(){
-        return "sendsms";
-    }
-});
+
 
 app.controller('loginController', function($scope,$http,urlService,$window) {
     $("#spinner").hide();
@@ -107,12 +162,37 @@ $scope.validateLogin=function(){
 }
   });
 
-  app.controller('adminController', function($scope,$http,urlService,$window) {
+  app.controller('adminController', function($scope,$http,urlService,$window,fileUpload) {
     $scope.showSMS=false;
     $scope.form={};
     $scope.activeSMS=function(){
         $scope.showSMS=true; 
     }
+
+    $scope.uploadFile = function(){
+        $("#spinner").show();
+        var file = $scope.form.myFile;
+        console.log('file is ' );
+        console.dir(file);
+        var uploadUrl = urlService.host()+urlService.importUrl();
+            var fd = new FormData();
+            fd.append('file', file);
+            $http({
+                url: uploadUrl,
+                method: "POST",
+                data: fd,
+                headers: {'Content-Type': undefined,'token': $scope.userInfo.adminToken}
+          })
+          .then(function(response) {
+            $("#spinner").hide();
+            $scope.form.numbers=response.data.data.toString();
+          }, 
+          function(response) { // optional
+            $("#spinner").hide();
+                 console.log(response);
+                // $window.location.href="#!error";
+          });
+    };
     $scope.sendsms=function(){
         $("#spinner").show();
         var numbers=$scope.form.numbers;

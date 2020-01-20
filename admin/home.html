@@ -348,6 +348,9 @@
 							</div>
 							<div ng-if="userDetails.roleId==2 && showSMS">
 								<div class="card-body" >
+									<input class="btn btn-warning" type="file" name="file" file-model="form.myFile"/>
+									<button class="btn btn-info" ng-click="uploadFile()">upload Excel</button>
+									<hr>
 									<div class="card-title">Send SMS</div>									
 									<div class="col-md-12">
 										
@@ -355,6 +358,7 @@
 											<label for="comment">Enter Numbers</label>
 											<textarea class="form-control" id="comment" rows="5" ng-model="form.numbers">
 											</textarea>
+											
 										</div>
 										<div class="form-group">
 											<label for="text">Enter Text</label>
