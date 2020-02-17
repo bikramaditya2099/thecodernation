@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Courses Page</title>
+  <title>EventRegistration Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/signup.css">
@@ -16,8 +16,60 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <link rel="stylesheet" href="css/responsive.css">
+  <script>
+      var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope,$http) {
+    $scope.regtype = [
+        {model : "Register as a Student", type : "student"},
+        {model : "Register as a Delegate", type : "delegate"},
+        {model : "Register as a Sponsor", type: "sponsor"}
+    ];
+
+   $scope.type= $scope.regtype[0];
+   $scope.event={};
+   $scope.registered=false;
+    //   $scope.event.college="";
+   $scope.submitReg=function(){
+  $scope.url="http://localhost:8081/registerEvent";    
+var json={};
+json.type=$scope.type.type;
+json.email=$scope.email;
+json.name=$scope.name;
+json.phone=$scope.phone;
+json.organisation=$scope.event.org;
+json.designation=$scope.event.desg;
+json.college=$scope.event.college;
+json.stream=$scope.event.stream;
+json.percentage=$scope.event.career;
+json.organisation=$scope.event.comp;
+console.log(json)
+          $http({
+                url: $scope.url,
+                method: "POST",
+                data: json
+          })
+          .then(function(response) {
+            console.log(JSON.stringify(response.data));
+            alert("Registered succesfully");
+            
+$scope.email="";
+$scope.name="";
+$scope.phone="";
+$scope.event.org="";
+$scope.event.desg="";
+$scope.event.college="";
+$scope.event.stream="";
+$scope.event.career="";
+$scope.event.comp="";
+          }, 
+          function(response) { // optional
+            console.log(JSON.stringify(response.data));
+          });
+   }
+});
+      </script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
        <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
           <img class="navbar-brand " src="logo.png" height="73px" width="65px">
@@ -75,11 +127,11 @@
             <a class="nav-link " href="courses.html" style="color: #000;">Courses</a>
          </li>
          <li class="nav-item">
-                <a class="nav-link active" href="clients.html" style="color: #000;">Clients</a>
-             </li>
-             <li class="nav-item">
-              <a class="nav-link " href="event.html" style="color: #000;">Event</a>
-           </li>
+                <a class="nav-link " href="clients.html" style="color: #000;">Clients</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link  active" href="event.html" style="color: #000;">Event</a>
+         </li>
       </ul>
     </div>
   </nav>
@@ -97,94 +149,48 @@
     
         </div> <br>
         <div class="container">
-                <div class="row">
-                    <div class="left-text col-lg-12 col-md-12 col-sm-12 mobile-bottom-fix">
-                        <div class="left-heading">
-                            <h5><b>Our Clients</b></h5>
-                            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 80px; height:2px;background: #92ebfc;">
-                        </div>
-                        <div class="paddind_left">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (1).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (2).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (3).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (4).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (5).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (6).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (7).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (8).png">
-                           
-                            <img class="col-md-1 img_width" src="banners/clients/1 (10).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (11).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (12).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (13).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (14).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (15).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (16).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (17).png">
-                            <img class="col-md-1 img_width" src="banners/clients/1 (18).png">
-                            <img class="col-md-1 img_width" src="banners/clients/2.png">
-                            <img class="col-md-1 img_width" src="banners/clients/3.png">
-                            <img class="col-md-1 img_width" src="banners/clients/4.png">
-                            <img class="col-md-1 img_width" src="banners/clients/5.png">
-                            <img class="col-md-1 img_width" src="banners/clients/6.png">
-                            <img class="col-md-1 img_width" src="banners/clients/7.png">
-                            <img class="col-md-1 img_width" src="banners/clients/8.png">
-                            <img class="col-md-1 img_width" src="banners/clients/9.png">
-                            <img class="col-md-1 img_width" src="banners/clients/10.png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (1).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (2).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (3).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (4).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (5).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (6).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (7).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (8).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (9).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (10).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (11).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (12).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (13).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (14).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (15).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (16).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (17).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (18).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (19).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (20).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (21).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (22).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (23).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (24).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (25).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (26).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (27).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (28).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (29).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (30).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (31).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (32).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (33).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (34).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (35).png">
-                            
-                            <img class="col-md-1 img_width" src="banners/clients/3 (36).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (37).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (38).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (39).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (40).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (41).png">
-                            <img class="col-md-1 img_width" src="banners/clients/3 (42).png">
-
-                            
-
-
-                        </div>
-                    </div>
-                   
-                </div>
+            <form>
+              <div class="form-group col-lg-6">
+                <label for="sel1">Select How You Register:</label>
+                
+                <select class="form-control" ng-model="type" ng-options="x.model for x in regtype">
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="container">
+          <form>
+            <div class="form-group col-lg-6">
+              <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name*" ng-model="name">
             </div>
-     
-   
+            <div class="form-group col-lg-6">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email*" ng-model="email">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Phone No*" ng-model="phone">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[0]">
+                <input type="text" class="form-control" id="college" aria-describedby="emailHelp" placeholder="College*" ng-model="event.college">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[0]">
+                <input type="text" class="form-control" id="Stream" aria-describedby="emailHelp" placeholder="Stream*" ng-model="event.stream">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[0]">
+                <input type="text" class="form-control" id="career" aria-describedby="emailHelp" placeholder="Career%" ng-model="event.career">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[1]">
+                <input type="text" class="form-control" id="organization" aria-describedby="emailHelp" placeholder="organization*" ng-model="event.org">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[1]">
+                <input type="text" class="form-control" id="designation" aria-describedby="emailHelp" placeholder="Designation*" ng-model="event.desg">
+              </div>
+              <div class="form-group col-lg-6" ng-if="type== regtype[2]">
+                <input type="text" class="form-control" id="company" aria-describedby="emailHelp" placeholder="Company*" ng-model="event.comp">
+              </div>
+              <button type="submit" class="btn btn-primary center-block" ng-click="submitReg()">Submit</button>
+              
+          </form>
+          </div>
             <hr style="margin-top: 3rem;">
  <!-- Footer -->
 <footer class="page-footer font-small blue-grey lighten-5">
@@ -328,8 +334,8 @@
                     $('.gfq-panel').toggleClass('panel-active');
                 });
             });
-            
       </script>
+
       </div>
  </div>
 </body>

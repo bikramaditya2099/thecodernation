@@ -230,6 +230,14 @@
 							
 						</li>
 						<li class="nav-item" ng-if="userDetails.roleId==2">
+							<a data-toggle="collapse" ng-click="activeEVENT()">
+								<i class="fas fa-th-list"></i>
+								<p>Event</p>
+								
+							</a>
+							
+						</li>
+						<li class="nav-item" ng-if="userDetails.roleId==2">
 							<a data-toggle="collapse" href="#!homepage">
 								<i class="fas fa-th-list"></i>
 								<p>Students</p>
@@ -369,6 +377,45 @@
 										<div class="card-action">
 											<button class="btn btn-success" ng-click="sendsms()">Submit</button>
 											<button class="btn btn-danger">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div ng-if="userDetails.roleId==2 && showEVENT">
+								<div class="card-body" >							
+									<div class="col-md-12">
+										
+										<div class="form-group">
+											<label for="comment">List of registered users for HR conclave</label>
+											</textarea>
+										</div>
+										<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<th>Id</th>
+												<th>Registration type</th>
+												<th>Name</th>
+												<th>Email</th>
+												<th>Phone</th>
+												<th>Organisation</th>
+												<th>Designation</th>
+												<th>College</th>
+												<th>Stream</th>
+												<th>Career %</th>
+												</tr>
+												<tr ng-repeat="item in registeredUsers">
+													<td>{{item.id}}</td>
+													<td>{{item.type}}</td>
+													<td>{{item.email}}</td>
+													<td>{{item.name}}</td>
+													<td>{{item.phone}}</td>
+													<td>{{item.organisation}}</td>
+													<td>{{item.designation}}</td>
+													<td>{{item.college}}</td>
+													<td>{{item.stream}}</td>
+													<td>{{item.percentage}}</td>
+												</tr>
+											</table>
 										</div>
 									</div>
 								</div>

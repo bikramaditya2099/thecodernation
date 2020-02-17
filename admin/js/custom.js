@@ -3,8 +3,8 @@ var app = angular.module("adminApp", ['ui.router','ui.bootstrap']);
 
 app.service('urlService', function() {
     this.host = function () {
-    return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-    //return "http://localhost:8081/";
+     //return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+    return "http://localhost:8081/";
     }
     this.adminLoginUrl=function(){
         return "adminlogin";
@@ -20,6 +20,9 @@ app.service('urlService', function() {
     }
     this.importUrl=function(){
         return "import";
+    }
+    this.getregisteredusers=function(){
+        return "getregisteredusers";
     }
 });
 
@@ -164,9 +167,35 @@ $scope.validateLogin=function(){
 
   app.controller('adminController', function($scope,$http,urlService,$window,fileUpload) {
     $scope.showSMS=false;
+    $scope.showEVENT=false;
     $scope.form={};
     $scope.activeSMS=function(){
+        $scope.showEVENT=false;
         $scope.showSMS=true; 
+    }
+    $scope.activeEVENT=function(){
+        $scope.showSMS=false; 
+        $scope.showEVENT=true; 
+        var requrl="http://localhost:8081/"+urlService.getregisteredusers();
+        $http({
+            url: requrl,
+            method: "GET",
+            headers: {
+                'token': $scope.userInfo.adminToken,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response) {
+           if(response.data.status!="FAIL"){
+           $scope.registeredUsers=response.data;
+           console.log($scope.registeredUsers);
+            }
+        }, 
+        function(response) { // optional
+               console.log(response);
+               $window.location.href="#!error";
+        });
     }
 
     $scope.uploadFile = function(){

@@ -8,6 +8,9 @@ app.config(function($routeProvider) {
     .when("/dashboard", {
       templateUrl : "/user/dashboard.html"
     })
+    .when("/profile", {
+      templateUrl : "/user/userProfile.html"
+    })
     .when("/register", {
         templateUrl : "/user/register.html"
       })
@@ -49,8 +52,8 @@ app.config(function($routeProvider) {
 
 app.service('urlService', function() {
     this.host = function () {
-      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-     //return "http://localhost:8081/";
+     // return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+     return "http://localhost:8081/";
     }
     this.registerUrl=function(){
         return "register";
@@ -67,7 +70,15 @@ app.service('urlService', function() {
   }
   this.resendOTP=function(){
     return "resendOtp/";
+  }
+    this.userProfile=function(){
+      return "getuserprofile";
+  }
+  this.updateProfile=function(){
+    return "updateProfile";
 }
+
+  
 
   });
   app.controller('Nav', function($scope) {
@@ -87,7 +98,54 @@ app.factory('userService',['$rootScope',function($rootScope){
   
   }
   }]);
+  app.controller('userProfileController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window, $timeout) {
+    $scope.showProfileUpdate=false;
+    console.log(sessionStorage.token);
+   if(sessionStorage.token==undefined || sessionStorage.token=="undefined"){
+    $window.location.href ="/";
+   }
+   else{
+    var requrl=urlService.host()+urlService.userProfile();
+    var token=JSON.parse(sessionStorage.token);
+    $http({
+        url: requrl,
+        method: "GET",
+        headers: {
+            'token': 'Bearer ' +token.token,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(function(response) {
+       if(response.data.status!="FAIL"){
+       $scope.userProfile=response.data;
+       console.log($scope.userProfile);
+        }
+    }, 
+    function(response) { // optional
+           console.log(response);
+           $window.location.href="#!error";
+    });
+   }
+  
+   $scope.submitProfile=function(){
+    var requrl=urlService.host()+urlService.updateProfile();
+      console.log(JSON.stringify($scope.userProfile));
+     $http({ 
+      url: requrl,
+      method: "POST",
+      data: $scope.userProfile
+  })
+  .then(function(response) {
+    console.log(JSON.stringify($scope.userProfile));
+   alert("Profile updated");
+  }, 
+  function(response) { // optional
+    console.log(JSON.stringify($scope.userProfile));
+  });
 
+   }
+  });
   app.controller('userController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window) {
 
     require(['c3', 'jquery'], function(c3, $) {
@@ -97,8 +155,8 @@ app.factory('userService',['$rootScope',function($rootScope){
             data: {
               columns: [
                   // each columns data
-                ['data1', 80],
-                ['data2', 20]
+                ['data1', 1],
+                ['data2', 0]
               ],
               type: 'donut', // default type of chart
               colors: {
@@ -152,6 +210,51 @@ app.factory('userService',['$rootScope',function($rootScope){
               }
             },
             axis: {
+            },
+            legend: {
+                      show: false, //hide legend
+            },
+            padding: {
+              bottom: 0,
+              top: 0
+            },
+          });
+        });
+      });
+
+      require(['c3', 'jquery'], function(c3, $) {
+        $(document).ready(function(){
+          var chart = c3.generate({
+            bindto: '#chart-bar-stacked', // id of chart wrapper
+            data: {
+              columns: [
+                  // each columns data
+                ['data1', 11, 8, 15, 18, 19, 17],
+                ['data2', 0, 0, 0, 0, 0, 0]
+              ],
+              type: 'bar', // default type of chart
+              groups: [
+                [ 'data1', 'data2']
+              ],
+              colors: {
+                'data1': tabler.colors["blue"],
+                'data2': tabler.colors["pink"]
+              },
+              names: {
+                  // name of each serie
+                'data1': 'target',
+                'data2': 'completed'
+              }
+            },
+            axis: {
+              x: {
+                type: 'category',
+                // name of each category
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
+              },
+            },
+            bar: {
+              width: 16
             },
             legend: {
                       show: false, //hide legend
@@ -281,7 +384,7 @@ app.controller('loginController', function($scope,$http,urlService,$uibModal,use
     json.username=$scope.formmodel.username;
     json.password=$scope.formmodel.password;
     var requrl=urlService.host()+urlService.loginUrl();
-    $http({
+    $http({ 
         url: requrl,
         method: "POST",
         data: json

@@ -1,0 +1,20 @@
+{
+    "eventdatils" :
+     [
+      {
+       "name": 1,
+       "venue": "Todo 1",
+       "date": false
+      },
+      {
+       "name": 2,
+       "venue": "Todo 2",
+       "date": false
+      },
+      {
+       "name": 3,
+       "venue": "Todo 3",
+       "date": true
+      }
+     ]
+  }

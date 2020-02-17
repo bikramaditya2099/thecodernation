@@ -8,6 +8,9 @@ app.config(function($routeProvider) {
     .when("/dashboard", {
       templateUrl : "/user/dashboard.html"
     })
+    .when("/profile", {
+      templateUrl : "/user/userProfile.html"
+    })
     .when("/register", {
         templateUrl : "/user/register.html"
       })
@@ -49,8 +52,8 @@ app.config(function($routeProvider) {
 
 app.service('urlService', function() {
     this.host = function () {
-      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-     //return "http://localhost:8081/";
+     // return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+     return "http://localhost:8081/";
     }
     this.registerUrl=function(){
         return "register";
@@ -67,7 +70,15 @@ app.service('urlService', function() {
   }
   this.resendOTP=function(){
     return "resendOtp/";
+  }
+    this.userProfile=function(){
+      return "getuserprofile";
+  }
+  this.updateProfile=function(){
+    return "updateProfile";
 }
+
+  
 
   });
   app.controller('Nav', function($scope) {
@@ -87,7 +98,58 @@ app.factory('userService',['$rootScope',function($rootScope){
   
   }
   }]);
+  app.controller('userProfileController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window, $timeout) {
+    $scope.showProfileUpdate=false;
+    console.log(sessionStorage.token);
+   if(sessionStorage.token==undefined || sessionStorage.token=="undefined"){
+    $window.location.href ="/";
+   }
+   else{
+    var requrl=urlService.host()+urlService.userProfile();
+    var token=JSON.parse(sessionStorage.token);
+    $http({
+        url: requrl,
+        method: "GET",
+        headers: {
+            'token': 'Bearer ' +token.token,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(function(response) {
+       if(response.data.status!="FAIL"){
+       $scope.userProfile=response.data;
+       console.log($scope.userProfile);
+        }
+    }, 
+    function(response) { // optional
+           console.log(response);
+           $window.location.href="#!error";
+    });
+   }
+  
+   $scope.submitProfile=function(){
+    var requrl=urlService.host()+urlService.updateProfile();
+    //  console.log(JSON.stringify($scope.userProfile));
+     $http({ 
+      url: requrl,
+      method: "POST",
+      data: $scope.userProfile
+  })
+  .then(function(response) {
+    console.log(JSON.stringify($scope.userProfile));
+    $timeout(function() {
+      $scope.showProfileUpdate = true;
+    }, 2000)
+    
+    
+  }, 
+  function(response) { // optional
+    console.log(JSON.stringify($scope.userProfile));
+  });
 
+   }
+  });
   app.controller('userController', function($rootScope,$scope,$http,urlService,$uibModal,userService,$window) {
 
     require(['c3', 'jquery'], function(c3, $) {
@@ -326,7 +388,7 @@ app.controller('loginController', function($scope,$http,urlService,$uibModal,use
     json.username=$scope.formmodel.username;
     json.password=$scope.formmodel.password;
     var requrl=urlService.host()+urlService.loginUrl();
-    $http({
+    $http({ 
         url: requrl,
         method: "POST",
         data: json
