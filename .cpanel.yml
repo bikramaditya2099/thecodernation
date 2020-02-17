@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - git pull
-    - export DEPLOYPATH=/home/thecoefs/pie/
+    - export DEPLOYPATH=/home/thecoefs/public_html/
     - /bin/cp -R banners $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH
@@ -12,5 +12,17 @@ deployment:
     - /bin/cp courses.html $DEPLOYPATH
     - /bin/cp Signup.html $DEPLOYPATH
     - /bin/cp clients.html $DEPLOYPATH
-    - /bin/cp logo.png $DEPLOYPATH   
+    - /bin/cp logo.png $DEPLOYPATH
+    - /bin/cp -R admin $DEPLOYPATH 
+    - /bin/cp -R assets $DEPLOYPATH 
+    - /bin/cp -R corner $DEPLOYPATH 
+    - /bin/cp -R demo $DEPLOYPATH
+    - /bin/cp -R docs $DEPLOYPATH
+    - /bin/cp -R user $DEPLOYPATH
+    - /bin/cp datascience.html $DEPLOYPATH
+    - /bin/cp dropdown.html $DEPLOYPATH
+    - /bin/cp event.html $DEPLOYPATH
+    - /bin/cp eventregistration.html $DEPLOYPATH
+    - /bin/cp fullstack.html $DEPLOYPATH
+    - /bin/cp talentCreation.html $DEPLOYPATH
     
