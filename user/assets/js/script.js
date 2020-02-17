@@ -52,8 +52,8 @@ app.config(function($routeProvider) {
 
 app.service('urlService', function() {
     this.host = function () {
-     // return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-     return "http://localhost:8081/";
+      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+     //return "http://localhost:8081/";
     }
     this.registerUrl=function(){
         return "register";

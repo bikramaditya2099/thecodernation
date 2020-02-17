@@ -3,8 +3,8 @@ var app = angular.module("adminApp", ['ui.router','ui.bootstrap']);
 
 app.service('urlService', function() {
     this.host = function () {
-     //return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-    return "http://localhost:8081/";
+    return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+    //return "http://localhost:8081/";
     }
     this.adminLoginUrl=function(){
         return "adminlogin";
@@ -176,7 +176,7 @@ $scope.validateLogin=function(){
     $scope.activeEVENT=function(){
         $scope.showSMS=false; 
         $scope.showEVENT=true; 
-        var requrl="http://localhost:8081/"+urlService.getregisteredusers();
+        var requrl=urlService.host()+urlService.getregisteredusers();
         $http({
             url: requrl,
             method: "GET",

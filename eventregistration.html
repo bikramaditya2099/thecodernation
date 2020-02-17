@@ -30,7 +30,7 @@ app.controller('myCtrl', function($scope,$http) {
    $scope.registered=false;
     //   $scope.event.college="";
    $scope.submitReg=function(){
-  $scope.url="http://localhost:8081/registerEvent";    
+  $scope.url="https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/registerEvent";    
 var json={};
 json.type=$scope.type.type;
 json.email=$scope.email;

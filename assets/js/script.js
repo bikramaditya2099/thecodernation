@@ -52,8 +52,8 @@ app.config(function($routeProvider) {
 
 app.service('urlService', function() {
     this.host = function () {
-     // return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
-     return "http://localhost:8081/";
+      return "https://myzkdddw4f.execute-api.us-west-2.amazonaws.com/dev/";
+     //return "http://localhost:8081/";
     }
     this.registerUrl=function(){
         return "register";
@@ -130,7 +130,7 @@ app.factory('userService',['$rootScope',function($rootScope){
   
    $scope.submitProfile=function(){
     var requrl=urlService.host()+urlService.updateProfile();
-      console.log(JSON.stringify($scope.userProfile));
+    //  console.log(JSON.stringify($scope.userProfile));
      $http({ 
       url: requrl,
       method: "POST",
@@ -138,7 +138,11 @@ app.factory('userService',['$rootScope',function($rootScope){
   })
   .then(function(response) {
     console.log(JSON.stringify($scope.userProfile));
-   alert("Profile updated");
+    $timeout(function() {
+      $scope.showProfileUpdate = true;
+    }, 2000)
+    
+    
   }, 
   function(response) { // optional
     console.log(JSON.stringify($scope.userProfile));
