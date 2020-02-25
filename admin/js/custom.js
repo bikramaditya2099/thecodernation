@@ -173,6 +173,11 @@ $scope.validateLogin=function(){
         $scope.showEVENT=false;
         $scope.showSMS=true; 
     }
+    $scope.exportExcel = function () {
+        $("#tblCustomers").table2excel({
+            filename: "Table.xls"
+        });
+    }
     $scope.activeEVENT=function(){
         $scope.showSMS=false; 
         $scope.showEVENT=true; 

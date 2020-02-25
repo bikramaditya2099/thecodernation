@@ -387,10 +387,10 @@
 										
 										<div class="form-group">
 											<label for="comment">List of registered users for HR conclave</label>
-											</textarea>
+											<button ng-click="exportExcel()" class="btn btn-info">Export</button>
 										</div>
 										<div class="table-responsive">
-										<table class="table table-striped">
+										<table id="tblCustomers" class="table table-striped">
 											<tr>
 												<th>Id</th>
 												<th>Registration type</th>
